@@ -76,12 +76,12 @@
             // 
             // lblUserName
             // 
-            lblUserName.AutoSize = true;
-            lblUserName.Location = new Point(54, 362);
+            lblUserName.Location = new Point(28, 362);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(58, 15);
+            lblUserName.Size = new Size(112, 15);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "j.kowalski";
+            lblUserName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 

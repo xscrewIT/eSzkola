@@ -88,6 +88,7 @@
             comboSchoolSubjects.Name = "comboSchoolSubjects";
             comboSchoolSubjects.Size = new Size(197, 23);
             comboSchoolSubjects.TabIndex = 8;
+            comboSchoolSubjects.DropDown += comboSchoolSubjects_DropDown;
             // 
             // comboClass
             // 
@@ -96,22 +97,23 @@
             comboClass.Name = "comboClass";
             comboClass.Size = new Size(197, 23);
             comboClass.TabIndex = 10;
+            comboClass.DropDown += comboClass_DropDown;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(343, 150);
+            label5.Location = new Point(348, 150);
             label5.Name = "label5";
-            label5.Size = new Size(81, 25);
+            label5.Size = new Size(60, 25);
             label5.TabIndex = 9;
-            label5.Text = "Oddział:";
+            label5.Text = "Klasa:";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label6.Location = new Point(343, 221);
+            label6.Location = new Point(349, 221);
             label6.Name = "label6";
             label6.Size = new Size(66, 25);
             label6.TabIndex = 11;
@@ -157,6 +159,7 @@
             // calendarCreateLesson
             // 
             calendarCreateLesson.Location = new Point(262, 333);
+            calendarCreateLesson.MaxSelectionCount = 1;
             calendarCreateLesson.Name = "calendarCreateLesson";
             calendarCreateLesson.TabIndex = 17;
             // 

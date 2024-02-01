@@ -44,33 +44,27 @@ namespace eSzkola
 
         private void btnCreateLesson_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
-            //new CreateLesson(connection_Class, username).Show();
-            CreateLesson createLesson = new CreateLesson();
+            CreateLesson createLesson = new CreateLesson(connection_Class);
             createLesson.ShowDialog();
         }
 
         private void btnCheckPresence_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
             new CheckPresence().ShowDialog();
         }
 
         private void btnCheckGrades_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
             new CheckGrades().ShowDialog();
         }
 
         private void btnInsertNote_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
             new AddBehaviourNote().ShowDialog();
         }
 
         private void btnCreateHomeWork_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
             new AddNewHomework().ShowDialog();
         }
 

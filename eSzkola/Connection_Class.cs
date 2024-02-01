@@ -25,7 +25,6 @@ namespace eSzkola
             {
                 connection = new SqlConnection(connectionString);
                 connection.Open();
-                MessageBox.Show("Połączono z bazą danych.");
                 return connection;
             }
             catch (Exception ex)
@@ -39,9 +38,13 @@ namespace eSzkola
         {
             try
             {
-                if (connection != null && connection.State == System.Data.ConnectionState.Open)
+                if (connection != null)
                 {
-                    connection.Close();
+                    if(connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                    connection = null;
                     MessageBox.Show("Zamknięto połączenie z bazą danych.");
                 }
             }
