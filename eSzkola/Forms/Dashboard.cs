@@ -50,7 +50,7 @@ namespace eSzkola
 
         private void btnCheckPresence_Click(object sender, EventArgs e)
         {
-            new CheckPresence().ShowDialog();
+            new CheckPresence(connection_Class).ShowDialog();
         }
 
         private void btnCheckGrades_Click(object sender, EventArgs e)

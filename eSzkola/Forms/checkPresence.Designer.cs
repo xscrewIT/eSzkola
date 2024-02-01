@@ -84,6 +84,7 @@
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(215, 23);
             comboChooseLesson.TabIndex = 9;
+            comboChooseLesson.DropDown += comboChooseLesson_DropDown;
             // 
             // btnApply
             // 
@@ -118,6 +119,7 @@
             // calendarLessons
             // 
             calendarLessons.Location = new Point(221, 109);
+            calendarLessons.MaxSelectionCount = 1;
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 20;
             // 

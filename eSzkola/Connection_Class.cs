@@ -62,7 +62,7 @@ namespace eSzkola
                 {
                     SqlCommand command = new SqlCommand(query, connection);
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Zapytanie SQL zostało wykonane pomyślnie.");
+                    //MessageBox.Show("Zapytanie SQL zostało wykonane pomyślnie.");
                 }
                 else
                 {

@@ -12,9 +12,13 @@ namespace eSzkola
 {
     public partial class ChangePresence : Form
     {
-        public ChangePresence()
+        private Connection_Class connection_Class;
+        private string query;
+        public ChangePresence(Connection_Class connection_Class, string query)
         {
             InitializeComponent();
+            this.connection_Class = connection_Class;
+            this.query = query;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -25,7 +29,7 @@ namespace eSzkola
         private void btnX_Click(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            new CheckPresence().ShowDialog();
+            //new CheckPresence().ShowDialog();
         }
 
         private void btnApply_Click(object sender, EventArgs e)

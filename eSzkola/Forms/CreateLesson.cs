@@ -16,7 +16,6 @@ namespace eSzkola
     {
 
         private Connection_Class connection_Class;
-        private string username;
 
         public CreateLesson(Connection_Class connection_Class)
         {
@@ -57,10 +56,6 @@ namespace eSzkola
                         MessageBox.Show($"Error: {ex}");
                     }
                 }
-                MessageBox.Show(comboSchoolSubjects.Text);
-                MessageBox.Show(comboClass.Text);
-                MessageBox.Show(txtSubject.Text);
-                
                 MessageBox.Show("Lekcja utworzona pomyślnie");
                 this.Hide();
             }
