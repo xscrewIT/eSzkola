@@ -70,7 +70,7 @@ namespace eSzkola
 
         private void btnCreateTest_Click(object sender, EventArgs e)
         {
-            new AddNewTest().ShowDialog();
+            new AddNewTest(connection_Class).ShowDialog();
         }
 
         private void btnIncommingEvents_Click(object sender, EventArgs e)

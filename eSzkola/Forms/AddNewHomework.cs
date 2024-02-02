@@ -78,7 +78,7 @@ namespace eSzkola
                 try
                 {
                     string strSelectedDate = calendarHomeworkDeadline.SelectionRange.Start.ToString("yyy-MM-dd");
-                    string query = ($"SELECT id_lekcja, temat FROM Lekcja WHERE CONVERT(char(10),data_lekcji,120) LIKE '{strSelectedDate}%' AND id_nauczyciel = 1");
+                    string query = ($"SELECT id_lekcja, temat FROM Lekcja WHERE CONVERT(char(10),data_lekcji,120) LIKE '{DateTime.Now.ToString("yyy-MM-dd")}%' AND id_nauczyciel = 1");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Lekcja");

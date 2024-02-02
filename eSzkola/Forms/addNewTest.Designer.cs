@@ -35,7 +35,7 @@
             label2 = new Label();
             label7 = new Label();
             label1 = new Label();
-            comboChooseLesson = new ComboBox();
+            comboChooseClass = new ComboBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -74,6 +74,7 @@
             // calendarTestDate
             // 
             calendarTestDate.Location = new Point(204, 370);
+            calendarTestDate.MaxSelectionCount = 1;
             calendarTestDate.Name = "calendarTestDate";
             calendarTestDate.TabIndex = 65;
             // 
@@ -107,13 +108,15 @@
             label1.TabIndex = 62;
             label1.Text = "Zakres materiału:";
             // 
-            // comboChooseLesson
+            // comboChooseClass
             // 
-            comboChooseLesson.FormattingEnabled = true;
-            comboChooseLesson.Location = new Point(204, 95);
-            comboChooseLesson.Name = "comboChooseLesson";
-            comboChooseLesson.Size = new Size(227, 23);
-            comboChooseLesson.TabIndex = 61;
+            comboChooseClass.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboChooseClass.FormattingEnabled = true;
+            comboChooseClass.Location = new Point(204, 95);
+            comboChooseClass.Name = "comboChooseClass";
+            comboChooseClass.Size = new Size(227, 23);
+            comboChooseClass.TabIndex = 61;
+            comboChooseClass.DropDown += comboChooseClass_DropDown;
             // 
             // label4
             // 
@@ -121,9 +124,9 @@
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label4.Location = new Point(250, 67);
             label4.Name = "label4";
-            label4.Size = new Size(138, 25);
+            label4.Size = new Size(132, 25);
             label4.TabIndex = 60;
-            label4.Text = "Wybierz lekcję:";
+            label4.Text = "Wybierz klasę:";
             // 
             // label5
             // 
@@ -145,6 +148,7 @@
             // 
             // comboTestType
             // 
+            comboTestType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboTestType.FormattingEnabled = true;
             comboTestType.Items.AddRange(new object[] { "Kartkówka", "Sprawdzian", "Odpowiedź ustna" });
             comboTestType.Location = new Point(204, 167);
@@ -176,7 +180,7 @@
             Controls.Add(label2);
             Controls.Add(label7);
             Controls.Add(label1);
-            Controls.Add(comboChooseLesson);
+            Controls.Add(comboChooseClass);
             Controls.Add(label4);
             Controls.Add(label5);
             Controls.Add(label6);
@@ -187,6 +191,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            Load += AddNewTest_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,7 +205,7 @@
         private Label label2;
         private Label label7;
         private Label label1;
-        private ComboBox comboChooseLesson;
+        private ComboBox comboChooseClass;
         private Label label4;
         private Label label5;
         private Label label6;
