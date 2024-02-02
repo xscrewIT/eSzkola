@@ -64,6 +64,8 @@
             // calendarHomeworkDeadline
             // 
             calendarHomeworkDeadline.Location = new Point(229, 331);
+            calendarHomeworkDeadline.MaxSelectionCount = 1;
+            calendarHomeworkDeadline.MinDate = new DateTime(2024, 2, 2, 0, 0, 0, 0);
             calendarHomeworkDeadline.Name = "calendarHomeworkDeadline";
             calendarHomeworkDeadline.TabIndex = 52;
             // 
@@ -99,11 +101,13 @@
             // 
             // comboChooseLesson
             // 
+            comboChooseLesson.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseLesson.FormattingEnabled = true;
             comboChooseLesson.Location = new Point(233, 97);
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(227, 23);
             comboChooseLesson.TabIndex = 47;
+            comboChooseLesson.DropDown += comboChooseLesson_DropDown;
             // 
             // label4
             // 
@@ -164,6 +168,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            Load += AddNewHomework_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -65,7 +65,7 @@ namespace eSzkola
 
         private void btnCreateHomeWork_Click(object sender, EventArgs e)
         {
-            new AddNewHomework().ShowDialog();
+            new AddNewHomework(connection_Class).ShowDialog();
         }
 
         private void btnCreateTest_Click(object sender, EventArgs e)
