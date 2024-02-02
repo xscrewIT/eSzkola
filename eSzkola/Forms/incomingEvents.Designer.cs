@@ -31,10 +31,14 @@
             label7 = new Label();
             label5 = new Label();
             label6 = new Label();
-            dataGridIncomingEvents = new DataGridView();
+            dataGridIncomingHomework = new DataGridView();
             btnApply = new Button();
             btnCancel = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridIncomingEvents).BeginInit();
+            dataGridIncomingTest = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridIncomingHomework).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridIncomingTest).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -65,17 +69,19 @@
             label6.TabIndex = 36;
             label6.Text = "Elektroniczny\r\nSystem\r\nOceniania";
             // 
-            // dataGridIncomingEvents
+            // dataGridIncomingHomework
             // 
-            dataGridIncomingEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridIncomingEvents.Location = new Point(199, 64);
-            dataGridIncomingEvents.Name = "dataGridIncomingEvents";
-            dataGridIncomingEvents.Size = new Size(807, 294);
-            dataGridIncomingEvents.TabIndex = 35;
+            dataGridIncomingHomework.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridIncomingHomework.Location = new Point(182, 100);
+            dataGridIncomingHomework.Name = "dataGridIncomingHomework";
+            dataGridIncomingHomework.ReadOnly = true;
+            dataGridIncomingHomework.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridIncomingHomework.Size = new Size(416, 294);
+            dataGridIncomingHomework.TabIndex = 35;
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(632, 404);
+            btnApply.Location = new Point(620, 404);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 40;
@@ -85,7 +91,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(519, 404);
+            btnCancel.Location = new Point(507, 404);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 39;
@@ -93,17 +99,50 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // dataGridIncomingTest
+            // 
+            dataGridIncomingTest.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridIncomingTest.Location = new Point(604, 100);
+            dataGridIncomingTest.Name = "dataGridIncomingTest";
+            dataGridIncomingTest.ReadOnly = true;
+            dataGridIncomingTest.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridIncomingTest.Size = new Size(416, 294);
+            dataGridIncomingTest.TabIndex = 41;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10F);
+            label1.Location = new Point(340, 72);
+            label1.Name = "label1";
+            label1.Size = new Size(117, 19);
+            label1.TabIndex = 42;
+            label1.Text = "Zadania domowe:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(786, 72);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 19);
+            label2.TabIndex = 43;
+            label2.Text = "Egzaminy:";
+            // 
             // IncomingEvents
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dataGridIncomingTest);
             Controls.Add(btnApply);
             Controls.Add(btnCancel);
             Controls.Add(label7);
             Controls.Add(label5);
             Controls.Add(label6);
-            Controls.Add(dataGridIncomingEvents);
+            Controls.Add(dataGridIncomingHomework);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -111,7 +150,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
-            ((System.ComponentModel.ISupportInitialize)dataGridIncomingEvents).EndInit();
+            Load += IncomingEvents_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridIncomingHomework).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridIncomingTest).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,8 +162,11 @@
         private Label label7;
         private Label label5;
         private Label label6;
-        private DataGridView dataGridIncomingEvents;
+        private DataGridView dataGridIncomingHomework;
         private Button btnApply;
         private Button btnCancel;
+        private DataGridView dataGridIncomingTest;
+        private Label label1;
+        private Label label2;
     }
 }

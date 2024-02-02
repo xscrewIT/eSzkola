@@ -75,7 +75,7 @@ namespace eSzkola
 
         private void btnIncommingEvents_Click(object sender, EventArgs e)
         {
-            new IncomingEvents().ShowDialog();
+            new IncomingEvents(connection_Class).ShowDialog();
         }
 
         private void btnSentMessage_Click(object sender, EventArgs e)
