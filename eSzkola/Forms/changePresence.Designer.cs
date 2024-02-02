@@ -42,6 +42,7 @@
             btnApply = new Button();
             btnCancel = new Button();
             label7 = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridPresence).BeginInit();
             SuspendLayout();
             // 
@@ -49,21 +50,26 @@
             // 
             dataGridPresence.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridPresence.Location = new Point(200, 61);
+            dataGridPresence.MultiSelect = false;
             dataGridPresence.Name = "dataGridPresence";
-            dataGridPresence.Size = new Size(807, 294);
+            dataGridPresence.ReadOnly = true;
+            dataGridPresence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridPresence.Size = new Size(626, 294);
             dataGridPresence.TabIndex = 0;
+            dataGridPresence.CellClick += dataGridPresence_CellClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(204, 364);
+            label1.Location = new Point(202, 364);
             label1.Name = "label1";
             label1.Size = new Size(30, 15);
             label1.TabIndex = 1;
-            label1.Text = "Imie";
+            label1.Text = "Imię";
             // 
             // txtFirstName
             // 
+            txtFirstName.Enabled = false;
             txtFirstName.Location = new Point(242, 361);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.ReadOnly = true;
@@ -72,6 +78,7 @@
             // 
             // txtLastName
             // 
+            txtLastName.Enabled = false;
             txtLastName.Location = new Point(443, 361);
             txtLastName.Name = "txtLastName";
             txtLastName.ReadOnly = true;
@@ -125,12 +132,14 @@
             // 
             // comboPresence
             // 
+            comboPresence.DropDownStyle = ComboBoxStyle.DropDownList;
             comboPresence.FormattingEnabled = true;
-            comboPresence.Items.AddRange(new object[] { "+ - obecność", "x - nieobecność", "* - nieobecność usprawiedliwiona", "s - spoźnienie" });
+            comboPresence.Items.AddRange(new object[] { "+", "x", "*", "s" });
             comboPresence.Location = new Point(646, 361);
             comboPresence.Name = "comboPresence";
             comboPresence.Size = new Size(121, 23);
             comboPresence.TabIndex = 11;
+            comboPresence.DropDownClosed += comboPresence_DropDownClosed;
             // 
             // txtAddNote
             // 
@@ -138,6 +147,7 @@
             txtAddNote.Name = "txtAddNote";
             txtAddNote.Size = new Size(182, 23);
             txtAddNote.TabIndex = 12;
+            txtAddNote.Leave += txtAddNote_Leave;
             // 
             // btnApply
             // 
@@ -169,11 +179,22 @@
             label7.TabIndex = 21;
             label7.Text = "Modyfikuj obecność:";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label8.Location = new Point(832, 173);
+            label8.Name = "label8";
+            label8.Size = new Size(185, 60);
+            label8.TabIndex = 22;
+            label8.Text = "+ - obecność\r\nx - nieobecność\r\n* - nieobecność usprawiedliwiona\r\ns - spoźnienie";
+            // 
             // ChangePresence
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 450);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(btnApply);
             Controls.Add(btnCancel);
@@ -195,6 +216,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            Load += ChangePresence_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridPresence).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -216,5 +238,6 @@
         private Button btnApply;
         private Button btnCancel;
         private Label label7;
+        private Label label8;
     }
 }

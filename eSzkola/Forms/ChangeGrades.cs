@@ -25,7 +25,6 @@ namespace eSzkola
         private void btnX_Click(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            new CheckGrades().ShowDialog();
         }
 
         private void btnApply_Click(object sender, EventArgs e)
