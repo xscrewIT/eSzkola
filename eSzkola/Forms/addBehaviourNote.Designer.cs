@@ -73,11 +73,13 @@
             // 
             // comboChooseStudent
             // 
+            comboChooseStudent.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseStudent.FormattingEnabled = true;
             comboChooseStudent.Location = new Point(188, 161);
             comboChooseStudent.Name = "comboChooseStudent";
             comboChooseStudent.Size = new Size(227, 23);
             comboChooseStudent.TabIndex = 35;
+            comboChooseStudent.DropDown += comboChooseStudent_DropDown;
             // 
             // label1
             // 
@@ -91,11 +93,13 @@
             // 
             // comboChooseClass
             // 
+            comboChooseClass.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseClass.FormattingEnabled = true;
             comboChooseClass.Location = new Point(188, 90);
             comboChooseClass.Name = "comboChooseClass";
             comboChooseClass.Size = new Size(227, 23);
             comboChooseClass.TabIndex = 33;
+            comboChooseClass.DropDown += comboChooseClass_DropDown;
             // 
             // label4
             // 
@@ -120,6 +124,7 @@
             // calendarAddNoteDate
             // 
             calendarAddNoteDate.Location = new Point(188, 230);
+            calendarAddNoteDate.MaxSelectionCount = 1;
             calendarAddNoteDate.Name = "calendarAddNoteDate";
             calendarAddNoteDate.TabIndex = 39;
             // 

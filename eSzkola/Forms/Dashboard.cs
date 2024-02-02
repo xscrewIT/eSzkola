@@ -60,7 +60,7 @@ namespace eSzkola
 
         private void btnInsertNote_Click(object sender, EventArgs e)
         {
-            new AddBehaviourNote().ShowDialog();
+            new AddBehaviourNote(connection_Class).ShowDialog();
         }
 
         private void btnCreateHomeWork_Click(object sender, EventArgs e)
