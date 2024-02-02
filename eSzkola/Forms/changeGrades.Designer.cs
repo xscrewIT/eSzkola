@@ -65,12 +65,14 @@
             // 
             // comboGrade
             // 
+            comboGrade.DropDownStyle = ComboBoxStyle.DropDownList;
             comboGrade.FormattingEnabled = true;
             comboGrade.Items.AddRange(new object[] { "6", "5", "4", "3", "2", "1" });
             comboGrade.Location = new Point(768, 351);
             comboGrade.Name = "comboGrade";
             comboGrade.Size = new Size(121, 23);
             comboGrade.TabIndex = 30;
+            comboGrade.DropDownClosed += comboGrade_DropDownClosed;
             // 
             // label5
             // 
@@ -137,9 +139,13 @@
             // 
             dataGridGrades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridGrades.Location = new Point(197, 51);
+            dataGridGrades.MultiSelect = false;
             dataGridGrades.Name = "dataGridGrades";
+            dataGridGrades.ReadOnly = true;
+            dataGridGrades.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridGrades.Size = new Size(807, 294);
             dataGridGrades.TabIndex = 21;
+            dataGridGrades.CellClick += dataGridGrades_CellClick;
             // 
             // label7
             // 
@@ -175,6 +181,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            Load += ChangeGrades_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridGrades).EndInit();
             ResumeLayout(false);
             PerformLayout();
