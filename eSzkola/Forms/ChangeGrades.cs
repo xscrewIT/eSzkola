@@ -12,9 +12,14 @@ namespace eSzkola
 {
     public partial class ChangeGrades : Form
     {
-        public ChangeGrades()
+        private Connection_Class connection_Class;
+        private string id_Lekcja;
+
+        public ChangeGrades(Connection_Class connection_Class, string id_Lekcja)
         {
             InitializeComponent();
+            this.connection_Class = connection_Class;
+            this.id_Lekcja = id_Lekcja;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

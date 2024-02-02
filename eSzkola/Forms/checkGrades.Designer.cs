@@ -82,6 +82,7 @@
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(215, 23);
             comboChooseLesson.TabIndex = 25;
+            comboChooseLesson.DropDown += comboChooseLesson_DropDown;
             // 
             // label4
             // 

@@ -55,7 +55,7 @@ namespace eSzkola
 
         private void btnCheckGrades_Click(object sender, EventArgs e)
         {
-            new CheckGrades().ShowDialog();
+            new CheckGrades(connection_Class).ShowDialog();
         }
 
         private void btnInsertNote_Click(object sender, EventArgs e)
