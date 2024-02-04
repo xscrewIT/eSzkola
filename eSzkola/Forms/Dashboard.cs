@@ -80,7 +80,7 @@ namespace eSzkola
 
         private void btnSentMessage_Click(object sender, EventArgs e)
         {
-            new SendMessage().ShowDialog();
+            new SendMessage(connection_Class).ShowDialog();
         }
 
         private void btnPresenceRaports_Click(object sender, EventArgs e)

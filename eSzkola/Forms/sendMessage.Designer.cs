@@ -38,6 +38,8 @@
             txtMessage = new TextBox();
             btnSend = new Button();
             btnCancel = new Button();
+            comboRecipientType = new ComboBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label5
@@ -72,7 +74,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label2.Location = new Point(182, 78);
+            label2.Location = new Point(182, 100);
             label2.Name = "label2";
             label2.Size = new Size(94, 25);
             label2.TabIndex = 35;
@@ -82,7 +84,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(194, 116);
+            label3.Location = new Point(194, 136);
             label3.Name = "label3";
             label3.Size = new Size(66, 25);
             label3.TabIndex = 36;
@@ -90,25 +92,27 @@
             // 
             // comboRecipient
             // 
+            comboRecipient.DropDownStyle = ComboBoxStyle.DropDownList;
             comboRecipient.FormattingEnabled = true;
-            comboRecipient.Location = new Point(282, 80);
+            comboRecipient.Location = new Point(282, 102);
             comboRecipient.Name = "comboRecipient";
             comboRecipient.Size = new Size(506, 23);
             comboRecipient.TabIndex = 37;
+            comboRecipient.DropDown += comboRecipient_DropDown;
             // 
             // txtMsgSubject
             // 
-            txtMsgSubject.Location = new Point(282, 118);
+            txtMsgSubject.Location = new Point(282, 138);
             txtMsgSubject.Name = "txtMsgSubject";
             txtMsgSubject.Size = new Size(506, 23);
             txtMsgSubject.TabIndex = 38;
             // 
             // txtMessage
             // 
-            txtMessage.Location = new Point(182, 154);
+            txtMessage.Location = new Point(182, 170);
             txtMessage.Multiline = true;
             txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(606, 252);
+            txtMessage.Size = new Size(606, 236);
             txtMessage.TabIndex = 39;
             txtMessage.Text = "Wpisz treść...";
             // 
@@ -132,11 +136,33 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // comboRecipientType
+            // 
+            comboRecipientType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboRecipientType.FormattingEnabled = true;
+            comboRecipientType.Items.AddRange(new object[] { "Uczeń", "Rodzic" });
+            comboRecipientType.Location = new Point(282, 67);
+            comboRecipientType.Name = "comboRecipientType";
+            comboRecipientType.Size = new Size(506, 23);
+            comboRecipientType.TabIndex = 71;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label4.Location = new Point(182, 65);
+            label4.Name = "label4";
+            label4.Size = new Size(87, 25);
+            label4.TabIndex = 70;
+            label4.Text = "Do kogo:";
+            // 
             // SendMessage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboRecipientType);
+            Controls.Add(label4);
             Controls.Add(btnSend);
             Controls.Add(btnCancel);
             Controls.Add(txtMessage);
@@ -170,5 +196,7 @@
         private TextBox txtMessage;
         private Button btnSend;
         private Button btnCancel;
+        private ComboBox comboRecipientType;
+        private Label label4;
     }
 }
