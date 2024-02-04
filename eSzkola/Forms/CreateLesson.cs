@@ -36,7 +36,6 @@ namespace eSzkola
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var regex = new Regex(@"[^a-zA-Z0-9]");
             if (comboSchoolSubjects.Text != "" && comboClass.Text != "" && txtSubject.Text != "" && !(txtSubject.Text.StartsWith(" ")))
             {
                 using (SqlConnection conn = connection_Class.OpenConnection())
@@ -141,7 +140,7 @@ namespace eSzkola
 
         private void txtSubject_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            var regex = new Regex(@"[^a-zA-Z0-9AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż,-:.!?\s\b]");
             if (regex.IsMatch(e.KeyChar.ToString()))
             {
                 e.Handled = true;
