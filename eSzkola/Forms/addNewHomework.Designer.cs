@@ -43,7 +43,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(362, 515);
+            btnApply.Location = new Point(378, 515);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 56;
@@ -53,7 +53,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(249, 515);
+            btnCancel.Location = new Point(265, 515);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 55;
@@ -63,7 +63,7 @@
             // 
             // calendarHomeworkDeadline
             // 
-            calendarHomeworkDeadline.Location = new Point(229, 331);
+            calendarHomeworkDeadline.Location = new Point(245, 331);
             calendarHomeworkDeadline.MaxSelectionCount = 1;
             calendarHomeworkDeadline.MinDate = new DateTime(2024, 2, 2, 0, 0, 0, 0);
             calendarHomeworkDeadline.Name = "calendarHomeworkDeadline";
@@ -71,39 +71,39 @@
             // 
             // label2
             // 
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label2.Location = new Point(205, 7);
+            label2.Location = new Point(184, 7);
             label2.Name = "label2";
-            label2.Size = new Size(306, 37);
+            label2.Size = new Size(347, 37);
             label2.TabIndex = 51;
             label2.Text = "Dodaj zadanie domowe:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(267, 303);
+            label7.Location = new Point(245, 303);
             label7.Name = "label7";
-            label7.Size = new Size(150, 25);
+            label7.Size = new Size(227, 25);
             label7.TabIndex = 50;
             label7.Text = "Data wykonania:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.Location = new Point(279, 138);
+            label1.Location = new Point(245, 138);
             label1.Name = "label1";
-            label1.Size = new Size(125, 25);
+            label1.Size = new Size(227, 25);
             label1.TabIndex = 48;
             label1.Text = "Opis zadania:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboChooseLesson
             // 
             comboChooseLesson.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseLesson.FormattingEnabled = true;
-            comboChooseLesson.Location = new Point(233, 97);
+            comboChooseLesson.Location = new Point(246, 97);
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(227, 23);
             comboChooseLesson.TabIndex = 47;
@@ -111,13 +111,13 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(279, 69);
+            label4.Location = new Point(246, 69);
             label4.Name = "label4";
-            label4.Size = new Size(138, 25);
+            label4.Size = new Size(227, 25);
             label4.TabIndex = 46;
             label4.Text = "Wybierz lekcję:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -139,11 +139,12 @@
             // 
             // txtHomeworkDescription
             // 
-            txtHomeworkDescription.Location = new Point(229, 166);
+            txtHomeworkDescription.Location = new Point(245, 166);
             txtHomeworkDescription.Multiline = true;
             txtHomeworkDescription.Name = "txtHomeworkDescription";
             txtHomeworkDescription.Size = new Size(227, 114);
             txtHomeworkDescription.TabIndex = 57;
+            txtHomeworkDescription.KeyPress += txtHomeworkDescription_KeyPress;
             // 
             // AddNewHomework
             // 

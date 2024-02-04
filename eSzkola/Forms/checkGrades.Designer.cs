@@ -41,19 +41,19 @@
             // 
             // calendarLessons
             // 
-            calendarLessons.Location = new Point(221, 100);
+            calendarLessons.Location = new Point(218, 100);
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 29;
             // 
             // label5
             // 
-            label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(261, 61);
+            label5.Location = new Point(184, 61);
             label5.Name = "label5";
-            label5.Size = new Size(125, 30);
+            label5.Size = new Size(294, 30);
             label5.TabIndex = 28;
             label5.Text = "Wskaż datę:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnApply
             // 
@@ -78,7 +78,7 @@
             // comboChooseLesson
             // 
             comboChooseLesson.FormattingEnabled = true;
-            comboChooseLesson.Location = new Point(225, 321);
+            comboChooseLesson.Location = new Point(222, 321);
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(215, 23);
             comboChooseLesson.TabIndex = 25;
@@ -86,23 +86,23 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(255, 275);
+            label4.Location = new Point(184, 275);
             label4.Name = "label4";
-            label4.Size = new Size(151, 30);
+            label4.Size = new Size(294, 30);
             label4.TabIndex = 24;
             label4.Text = "Wybierz lekcję:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(278, 5);
+            label3.Location = new Point(184, 5);
             label3.Name = "label3";
-            label3.Size = new Size(97, 37);
+            label3.Size = new Size(294, 37);
             label3.TabIndex = 23;
             label3.Text = "Oceny:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 

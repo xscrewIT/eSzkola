@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace eSzkola
 {
@@ -39,13 +40,17 @@ namespace eSzkola
                 {
                     try
                     {
+                        string username = connection_Class.Username;
+                        SqlCommand cmdTeacherID = new SqlCommand($"SELECT id_nauczyciel FROM Nauczyciel WHERE username = '{username}'", conn);
+                        string strTeacherID = cmdTeacherID.ExecuteScalar().ToString();
+
                         string strSchoolClass = comboChooseClass.Text;
                         string strStudentID = comboChooseStudent.SelectedValue.ToString();
                         string strNoteDate = calendarAddNoteDate.SelectionRange.Start.ToString("yyyy-MM-dd " + DateTime.Now.ToString("HH:mm:ss"));
                         string strNote = txtBehaviourNote.Text;
 
                         string insertQuery = ($"INSERT INTO Uwagi (uwaga, data, id_nauczyciel, id_uczen) VALUES" +
-                            $"('{strNote}', '{strNoteDate}', 1, {strStudentID})");
+                            $"('{strNote}', '{strNoteDate}', {strTeacherID}, {strStudentID})");
                         connection_Class.ExecuteQuery(conn, insertQuery);
                     }
                     catch (Exception ex)
@@ -117,6 +122,15 @@ namespace eSzkola
                 {
                     MessageBox.Show($"Error: {ex}");
                 }
+            }
+        }
+
+        private void txtBehaviourNote_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -63,28 +63,28 @@
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(294, 20);
+            label3.Location = new Point(182, 20);
             label3.Name = "label3";
-            label3.Size = new Size(176, 37);
+            label3.Size = new Size(398, 37);
             label3.TabIndex = 5;
             label3.Text = "Stwórz lekcję:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(326, 79);
+            label4.Location = new Point(182, 79);
             label4.Name = "label4";
-            label4.Size = new Size(102, 25);
+            label4.Size = new Size(387, 25);
             label4.TabIndex = 6;
             label4.Text = "Przedmiot:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboSchoolSubjects
             // 
             comboSchoolSubjects.FormattingEnabled = true;
-            comboSchoolSubjects.Location = new Point(282, 107);
+            comboSchoolSubjects.Location = new Point(276, 107);
             comboSchoolSubjects.Name = "comboSchoolSubjects";
             comboSchoolSubjects.Size = new Size(197, 23);
             comboSchoolSubjects.TabIndex = 8;
@@ -93,7 +93,7 @@
             // comboClass
             // 
             comboClass.FormattingEnabled = true;
-            comboClass.Location = new Point(282, 178);
+            comboClass.Location = new Point(276, 178);
             comboClass.Name = "comboClass";
             comboClass.Size = new Size(197, 23);
             comboClass.TabIndex = 10;
@@ -101,44 +101,45 @@
             // 
             // label5
             // 
-            label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(348, 150);
+            label5.Location = new Point(182, 150);
             label5.Name = "label5";
-            label5.Size = new Size(60, 25);
+            label5.Size = new Size(387, 25);
             label5.TabIndex = 9;
             label5.Text = "Klasa:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
-            label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label6.Location = new Point(349, 221);
+            label6.Location = new Point(182, 221);
             label6.Name = "label6";
-            label6.Size = new Size(66, 25);
+            label6.Size = new Size(387, 25);
             label6.TabIndex = 11;
             label6.Text = "Temat:";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtSubject
             // 
-            txtSubject.Location = new Point(282, 249);
+            txtSubject.Location = new Point(276, 249);
             txtSubject.Name = "txtSubject";
             txtSubject.Size = new Size(197, 23);
             txtSubject.TabIndex = 12;
+            txtSubject.KeyPress += txtSubject_KeyPress;
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(306, 299);
+            label7.Location = new Point(182, 299);
             label7.Name = "label7";
-            label7.Size = new Size(154, 25);
+            label7.Size = new Size(387, 25);
             label7.TabIndex = 13;
             label7.Text = "Data utworzenia:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(282, 522);
+            btnCancel.Location = new Point(279, 522);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 15;
@@ -148,7 +149,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(395, 522);
+            btnApply.Location = new Point(392, 522);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 16;

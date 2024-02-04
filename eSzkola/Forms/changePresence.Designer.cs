@@ -147,11 +147,12 @@
             txtAddNote.Name = "txtAddNote";
             txtAddNote.Size = new Size(182, 23);
             txtAddNote.TabIndex = 12;
+            txtAddNote.KeyPress += txtAddNote_KeyPress;
             txtAddNote.Leave += txtAddNote_Leave;
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(620, 415);
+            btnApply.Location = new Point(622, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 20;
@@ -161,7 +162,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(507, 415);
+            btnCancel.Location = new Point(509, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 19;
@@ -171,13 +172,13 @@
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(492, 9);
+            label7.Location = new Point(182, 9);
             label7.Name = "label7";
-            label7.Size = new Size(261, 37);
+            label7.Size = new Size(835, 37);
             label7.TabIndex = 21;
             label7.Text = "Modyfikuj obecność:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label8
             // 

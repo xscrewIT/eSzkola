@@ -45,7 +45,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(621, 405);
+            btnApply.Location = new Point(615, 405);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 33;
@@ -55,7 +55,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(508, 405);
+            btnCancel.Location = new Point(502, 405);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 32;
@@ -149,13 +149,13 @@
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(485, 9);
+            label7.Location = new Point(185, 9);
             label7.Name = "label7";
-            label7.Size = new Size(219, 37);
+            label7.Size = new Size(835, 37);
             label7.TabIndex = 34;
             label7.Text = "Modyfikuj oceny:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ChangeGrades
             // 

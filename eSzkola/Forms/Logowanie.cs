@@ -31,7 +31,7 @@ namespace eSzkola
                 else
                 {
                     MessageBox.Show("Po³¹czono z baz¹ danych.");
-                    Dashboard dashboard = new Dashboard(connection_Class, username);
+                    Dashboard dashboard = new Dashboard(connection_Class);
                     dashboard.Show();
                     this.Hide();
                 }

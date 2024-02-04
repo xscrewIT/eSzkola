@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 
 namespace eSzkola
 {
@@ -124,6 +125,15 @@ namespace eSzkola
         {
             int i = dataGridPresence.CurrentCell.RowIndex;
             ds.Tables["Obecnosc"].Rows[i][4] = txtAddNote.Text;
+        }
+
+        private void txtAddNote_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

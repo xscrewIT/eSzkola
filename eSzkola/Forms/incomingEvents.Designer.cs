@@ -43,13 +43,13 @@
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(471, 16);
+            label7.Location = new Point(183, 16);
             label7.Name = "label7";
-            label7.Size = new Size(325, 37);
+            label7.Size = new Size(838, 37);
             label7.TabIndex = 38;
             label7.Text = "Nadchodzące wydarzenia:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -81,7 +81,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(620, 404);
+            btnApply.Location = new Point(621, 404);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 40;
@@ -91,7 +91,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(507, 404);
+            btnCancel.Location = new Point(508, 404);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 39;
@@ -111,23 +111,23 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(340, 72);
+            label1.Location = new Point(182, 72);
             label1.Name = "label1";
-            label1.Size = new Size(117, 19);
+            label1.Size = new Size(416, 19);
             label1.TabIndex = 42;
             label1.Text = "Zadania domowe:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(786, 72);
+            label2.Location = new Point(604, 72);
             label2.Name = "label2";
-            label2.Size = new Size(70, 19);
+            label2.Size = new Size(416, 19);
             label2.TabIndex = 43;
             label2.Text = "Egzaminy:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // IncomingEvents
             // 

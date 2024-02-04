@@ -63,13 +63,13 @@
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(247, 198);
+            label7.Location = new Point(188, 198);
             label7.Name = "label7";
-            label7.Size = new Size(109, 25);
+            label7.Size = new Size(227, 25);
             label7.TabIndex = 36;
             label7.Text = "Data wpisu:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboChooseStudent
             // 
@@ -83,13 +83,13 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.Location = new Point(234, 133);
+            label1.Location = new Point(188, 133);
             label1.Name = "label1";
-            label1.Size = new Size(145, 25);
+            label1.Size = new Size(227, 25);
             label1.TabIndex = 34;
             label1.Text = "Wybierz ucznia:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboChooseClass
             // 
@@ -103,23 +103,23 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(234, 62);
+            label4.Location = new Point(188, 62);
             label4.Name = "label4";
-            label4.Size = new Size(132, 25);
+            label4.Size = new Size(227, 25);
             label4.TabIndex = 32;
             label4.Text = "Wybierz klasę:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label2.Location = new Point(399, 9);
+            label2.Location = new Point(184, 9);
             label2.Name = "label2";
-            label2.Size = new Size(188, 37);
+            label2.Size = new Size(606, 37);
             label2.TabIndex = 38;
             label2.Text = "Wstaw uwagę:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // calendarAddNoteDate
             // 
@@ -137,6 +137,7 @@
             label3.Size = new Size(114, 25);
             label3.TabIndex = 40;
             label3.Text = "Treść uwagi:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtBehaviourNote
             // 
@@ -145,10 +146,11 @@
             txtBehaviourNote.Name = "txtBehaviourNote";
             txtBehaviourNote.Size = new Size(335, 302);
             txtBehaviourNote.TabIndex = 41;
+            txtBehaviourNote.KeyPress += txtBehaviourNote_KeyPress;
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(492, 415);
+            btnApply.Location = new Point(498, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 43;
@@ -158,7 +160,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(379, 415);
+            btnCancel.Location = new Point(385, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 42;

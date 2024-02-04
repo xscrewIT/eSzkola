@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.CodeDom;
+using System.Text.RegularExpressions;
 
 namespace eSzkola
 {
@@ -43,14 +44,17 @@ namespace eSzkola
                         {
                             try
                             {
+                                string username = connection_Class.Username;
+                                SqlCommand cmdTeacherID = new SqlCommand($"SELECT id_nauczyciel FROM Nauczyciel WHERE username = '{username}'", conn);
+                                string strTeacherID = cmdTeacherID.ExecuteScalar().ToString();
+
                                 string strMsgSubject = txtMsgSubject.Text;
                                 string strMessage = txtMessage.Text;
                                 string strMsgDate = DateTime.Now.ToString("yyyy-MM-dd");
                                 string strIdStudent = comboRecipient.SelectedValue.ToString();
-                                string strIdTeacher = "1";
 
                                 string insertQuery = ($"INSERT INTO Wiadomosci (temat, tresc_Wiadomosci, data, id_uczen, id_nauczyciel) VALUES " +
-                                    $"('{strMsgSubject}', '{strMessage}', '{strMsgDate}', {strIdStudent}, {strIdTeacher})");
+                                    $"('{strMsgSubject}', '{strMessage}', '{strMsgDate}', {strIdStudent}, {strTeacherID})");
 
                                 connection_Class.ExecuteQuery(conn, insertQuery);
                             }
@@ -65,14 +69,17 @@ namespace eSzkola
                         {
                             try
                             {
+                                string username = connection_Class.Username;
+                                SqlCommand cmdTeacherID = new SqlCommand($"SELECT id_nauczyciel FROM Nauczyciel WHERE username = '{username}'", conn);
+                                string strTeacherID = cmdTeacherID.ExecuteScalar().ToString();
+
                                 string strMsgSubject = txtMsgSubject.Text;
                                 string strMessage = txtMessage.Text;
                                 string strMsgDate = DateTime.Now.ToString("yyyy-MM-dd");
                                 string strIdParent = comboRecipient.SelectedValue.ToString();
-                                string strIdTeacher = "1";
 
                                 string insertQuery = ($"INSERT INTO Wiadomosci (temat, tresc_Wiadomosci, data, id_rodzic, id_nauczyciel) VALUES " +
-                                    $"('{strMsgSubject}', '{strMessage}', '{strMsgDate}', {strIdParent}, {strIdTeacher})");
+                                    $"('{strMsgSubject}', '{strMessage}', '{strMsgDate}', {strIdParent}, {strTeacherID})");
 
                                 connection_Class.ExecuteQuery(conn, insertQuery);
                             }
@@ -179,6 +186,24 @@ namespace eSzkola
                         }
                     }
                     break;
+            }
+        }
+
+        private void txtMsgSubject_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMessage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
             }
         }
     }

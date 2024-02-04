@@ -40,7 +40,6 @@
             btnSentMessage = new Button();
             btnCreateHomeWork = new Button();
             btnInsertNote = new Button();
-            btnPresenceRaports = new Button();
             btnIncommingEvents = new Button();
             lblCurrentDate = new Label();
             btnCreateTest = new Button();
@@ -163,16 +162,6 @@
             btnInsertNote.UseVisualStyleBackColor = true;
             btnInsertNote.Click += btnInsertNote_Click;
             // 
-            // btnPresenceRaports
-            // 
-            btnPresenceRaports.Location = new Point(333, 216);
-            btnPresenceRaports.Name = "btnPresenceRaports";
-            btnPresenceRaports.Size = new Size(145, 23);
-            btnPresenceRaports.TabIndex = 14;
-            btnPresenceRaports.Text = "Raporty obecności";
-            btnPresenceRaports.UseVisualStyleBackColor = true;
-            btnPresenceRaports.Click += btnPresenceRaports_Click;
-            // 
             // btnIncommingEvents
             // 
             btnIncommingEvents.Location = new Point(558, 156);
@@ -210,7 +199,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnCreateTest);
             Controls.Add(lblCurrentDate);
-            Controls.Add(btnPresenceRaports);
             Controls.Add(btnIncommingEvents);
             Controls.Add(btnSentMessage);
             Controls.Add(btnCreateHomeWork);
@@ -250,7 +238,6 @@
         private Button btnSentMessage;
         private Button btnCreateHomeWork;
         private Button btnInsertNote;
-        private Button btnPresenceRaports;
         private Button btnIncommingEvents;
         private Label lblCurrentDate;
         private Button btnCreateTest;

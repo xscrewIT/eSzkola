@@ -42,6 +42,10 @@ namespace eSzkola
                     {
                         string id_Lekcja = comboChooseLesson.SelectedValue.ToString();
 
+                        string username = connection_Class.Username;
+                        SqlCommand cmdSchoolSubjectID = new SqlCommand($"SELECT id_przedmiot FROM Nauczyciel WHERE username = '{username}'", conn);
+                        string strSchoolSubjectID = cmdSchoolSubjectID.ExecuteScalar().ToString();
+
                         string query = ($"SELECT id_uczen FROM Ocena WHERE id_lekcja = {id_Lekcja}");
                         SqlDataAdapter da = new SqlDataAdapter(query, conn);
                         DataSet ds = new DataSet();
@@ -63,7 +67,7 @@ namespace eSzkola
                             {
                                 string strSelectedDate = calendarLessons.SelectionRange.Start.ToString("yyy-MM-dd");
                                 string insertQuery = ($"INSERT INTO Ocena (id_lekcja, id_uczen, data, id_przedmiot) VALUES" +
-                                    $"({id_Lekcja}, {ID}, '{strSelectedDate}', 1 )");
+                                    $"({id_Lekcja}, {ID}, '{strSelectedDate}', {strSchoolSubjectID})");
 
                                 connection_Class.ExecuteQuery(conn, insertQuery);
                             }
@@ -92,8 +96,12 @@ namespace eSzkola
             {
                 try
                 {
+                    string username = connection_Class.Username;
+                    SqlCommand cmdTeacherID = new SqlCommand($"SELECT id_nauczyciel FROM Nauczyciel WHERE username = '{username}'", conn);
+                    string strTeacherID = cmdTeacherID.ExecuteScalar().ToString();
+
                     string strSelectedDate = calendarLessons.SelectionRange.Start.ToString("yyy-MM-dd");
-                    string query = ($"SELECT id_lekcja, temat FROM Lekcja WHERE CONVERT(char(10),data_lekcji,120) LIKE '{strSelectedDate}%' AND id_nauczyciel = 1");
+                    string query = ($"SELECT id_lekcja, temat FROM Lekcja WHERE CONVERT(char(10),data_lekcji,120) LIKE '{strSelectedDate}%' AND id_nauczyciel = {strTeacherID}");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Lekcja");

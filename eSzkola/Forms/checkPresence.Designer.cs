@@ -59,23 +59,23 @@
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(261, 14);
+            label3.Location = new Point(182, 14);
             label3.Name = "label3";
-            label3.Size = new Size(139, 37);
+            label3.Size = new Size(310, 37);
             label3.TabIndex = 7;
             label3.Text = "Obecność:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(255, 284);
+            label4.Location = new Point(182, 284);
             label4.Name = "label4";
-            label4.Size = new Size(151, 30);
+            label4.Size = new Size(310, 30);
             label4.TabIndex = 8;
             label4.Text = "Wybierz lekcję:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboChooseLesson
             // 
@@ -88,7 +88,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(337, 417);
+            btnApply.Location = new Point(349, 417);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 18;
@@ -98,7 +98,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(224, 417);
+            btnCancel.Location = new Point(236, 417);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 17;
@@ -108,13 +108,13 @@
             // 
             // label5
             // 
-            label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(261, 70);
+            label5.Location = new Point(182, 70);
             label5.Name = "label5";
-            label5.Size = new Size(125, 30);
+            label5.Size = new Size(310, 30);
             label5.TabIndex = 19;
             label5.Text = "Wskaż datę:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // calendarLessons
             // 

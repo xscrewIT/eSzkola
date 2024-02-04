@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace eSzkola
 {
@@ -77,8 +78,12 @@ namespace eSzkola
             {
                 try
                 {
+                    string username = connection_Class.Username;
+                    SqlCommand cmdTeacherID = new SqlCommand($"SELECT id_nauczyciel FROM Nauczyciel WHERE username = '{username}'", conn);
+                    string strTeacherID = cmdTeacherID.ExecuteScalar().ToString();
+
                     string strSelectedDate = calendarHomeworkDeadline.SelectionRange.Start.ToString("yyy-MM-dd");
-                    string query = ($"SELECT id_lekcja, temat FROM Lekcja WHERE CONVERT(char(10),data_lekcji,120) LIKE '{DateTime.Now.ToString("yyy-MM-dd")}%' AND id_nauczyciel = 1");
+                    string query = ($"SELECT id_lekcja, temat FROM Lekcja WHERE CONVERT(char(10),data_lekcji,120) LIKE '{DateTime.Now.ToString("yyy-MM-dd")}%' AND id_nauczyciel = {strTeacherID}");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Lekcja");
@@ -105,6 +110,15 @@ namespace eSzkola
         private void AddNewHomework_Load(object sender, EventArgs e)
         {
             calendarHomeworkDeadline.MinDate = DateTime.Now;
+        }
+
+        private void txtHomeworkDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -8,25 +8,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace eSzkola
 {
     public partial class Dashboard : Form
     {
         private Connection_Class connection_Class;
-        private string username;
 
-        public Dashboard(Connection_Class connection_Class, string username)
+        public Dashboard(Connection_Class connection_Class)
         {
             InitializeComponent();
             this.connection_Class = connection_Class;
-            this.username = username;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            string username = connection_Class.Username;
+            using (SqlConnection conn = connection_Class.OpenConnection())
+            {
+                try
+                {
+                    SqlCommand cmdFirstName = new SqlCommand($"SELECT imie FROM Nauczyciel WHERE username = '{username}'", conn);
+                    SqlCommand cmdLastName = new SqlCommand($"SELECT nazwisko FROM Nauczyciel WHERE username = '{username}'", conn);
+                    string FirstName = cmdFirstName.ExecuteScalar().ToString();
+                    string LastName = cmdLastName.ExecuteScalar().ToString();
+
+                    lblGreetings.Text = ($"Witaj, {FirstName} {LastName}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex}");
+                }
+            }
             lblCurrentDate.Text = DateTime.Today.ToString("dd/MM/yyy");
-            lblGreetings.Text = ($"Witaj, {username.ToUpper()}");
+            
             lblUserName.Text = username;
         }
 
@@ -81,11 +97,6 @@ namespace eSzkola
         private void btnSentMessage_Click(object sender, EventArgs e)
         {
             new SendMessage(connection_Class).ShowDialog();
-        }
-
-        private void btnPresenceRaports_Click(object sender, EventArgs e)
-        {
-            new PresenceRaports().ShowDialog();
         }
     }
 }

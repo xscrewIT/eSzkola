@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace eSzkola
 {
@@ -98,6 +99,15 @@ namespace eSzkola
                 {
                     MessageBox.Show($"Error: {ex}");
                 }
+            }
+        }
+
+        private void txtTestDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9-,.!?\s\b]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
             }
         }
     }

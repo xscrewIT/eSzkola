@@ -106,6 +106,7 @@
             txtMsgSubject.Name = "txtMsgSubject";
             txtMsgSubject.Size = new Size(506, 23);
             txtMsgSubject.TabIndex = 38;
+            txtMsgSubject.KeyPress += txtMsgSubject_KeyPress;
             // 
             // txtMessage
             // 
@@ -115,6 +116,7 @@
             txtMessage.Size = new Size(606, 236);
             txtMessage.TabIndex = 39;
             txtMessage.Text = "Wpisz treść...";
+            txtMessage.KeyPress += txtMessage_KeyPress;
             // 
             // btnSend
             // 

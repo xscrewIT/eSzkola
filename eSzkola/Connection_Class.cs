@@ -12,6 +12,11 @@ namespace eSzkola
         private string connectionString, username, password;
         private SqlConnection connection;
 
+        public string Username
+        {
+            get { return username; }
+        }
+
         public Connection_Class(string username, string password)
         {
             this.username = username;
@@ -62,7 +67,6 @@ namespace eSzkola
                 {
                     SqlCommand command = new SqlCommand(query, connection);
                     command.ExecuteNonQuery();
-                    //MessageBox.Show("Zapytanie SQL zostało wykonane pomyślnie.");
                 }
                 else
                 {
@@ -76,20 +80,3 @@ namespace eSzkola
         }
     }
 }
-            //// Przykładowy connection string
-            //string connectionString = "Data Source=YourServer;Initial Catalog=YourDatabase;User Id=YourUsername;Password=YourPassword;";
-
-            //// Utwórz instancję klasy SqlConnectionManager
-            //Connection_Class connection_Class = new Connection_Class(connectionString);
-
-            //// Otwórz połączenie
-            //SqlConnection connection = Connection_Class.OpenConnection();
-
-            //// Przykładowe zapytanie SQL
-            //string query = "SELECT * FROM YourTable";
-
-            //// Wykonaj zapytanie SQL
-            //connection_Class.ExecuteQuery(connection, query);
-
-            //// Zamknij połączenie
-            //connection_Class.CloseConnection(connection);
