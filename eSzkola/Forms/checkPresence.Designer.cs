@@ -79,6 +79,7 @@
             // 
             // comboChooseLesson
             // 
+            comboChooseLesson.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseLesson.FormattingEnabled = true;
             comboChooseLesson.Location = new Point(225, 330);
             comboChooseLesson.Name = "comboChooseLesson";

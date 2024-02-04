@@ -83,6 +83,7 @@
             // 
             // comboSchoolSubjects
             // 
+            comboSchoolSubjects.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSchoolSubjects.FormattingEnabled = true;
             comboSchoolSubjects.Location = new Point(276, 107);
             comboSchoolSubjects.Name = "comboSchoolSubjects";
@@ -92,6 +93,7 @@
             // 
             // comboClass
             // 
+            comboClass.DropDownStyle = ComboBoxStyle.DropDownList;
             comboClass.FormattingEnabled = true;
             comboClass.Location = new Point(276, 178);
             comboClass.Name = "comboClass";

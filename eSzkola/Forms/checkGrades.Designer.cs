@@ -42,6 +42,7 @@
             // calendarLessons
             // 
             calendarLessons.Location = new Point(218, 100);
+            calendarLessons.MaxSelectionCount = 1;
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 29;
             // 
@@ -77,6 +78,7 @@
             // 
             // comboChooseLesson
             // 
+            comboChooseLesson.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseLesson.FormattingEnabled = true;
             comboChooseLesson.Location = new Point(222, 321);
             comboChooseLesson.Name = "comboChooseLesson";
