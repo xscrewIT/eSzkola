@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncomingEvents));
             label7 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -157,6 +158,7 @@
             Controls.Add(label6);
             Controls.Add(dataGridIncomingHomework);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "IncomingEvents";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewTest));
             txtTestDescription = new TextBox();
             btnApply = new Button();
             btnCancel = new Button();
@@ -199,6 +200,7 @@
             Controls.Add(label5);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddNewTest";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBehaviourNote));
             label5 = new Label();
             label6 = new Label();
             comboChooseStudent = new ComboBox();
@@ -179,6 +180,7 @@
             Controls.Add(label5);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddBehaviourNote";

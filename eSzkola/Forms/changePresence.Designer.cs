@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePresence));
             dataGridPresence = new DataGridView();
             label1 = new Label();
             txtFirstName = new TextBox();
@@ -224,6 +225,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridPresence);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ChangePresence";

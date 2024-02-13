@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeGrades));
             btnApply = new Button();
             btnCancel = new Button();
             comboGrade = new ComboBox();
@@ -188,6 +189,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridGrades);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ChangeGrades";
