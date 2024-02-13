@@ -40,7 +40,9 @@
             label1 = new Label();
             dataGridGrades = new DataGridView();
             label7 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridGrades).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnApply
@@ -154,14 +156,25 @@
             label7.Name = "label7";
             label7.Size = new Size(835, 37);
             label7.TabIndex = 34;
-            label7.Text = "Modyfikuj oceny:";
+            label7.Text = "Modyfikuj oceny";
             label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(33, 142);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 35;
+            pictureBox1.TabStop = false;
             // 
             // ChangeGrades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label7);
             Controls.Add(btnApply);
             Controls.Add(btnCancel);
@@ -183,6 +196,7 @@
             FormClosing += btnX_Click;
             Load += ChangeGrades_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridGrades).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +215,6 @@
         private Label label1;
         private DataGridView dataGridGrades;
         private Label label7;
+        private PictureBox pictureBox1;
     }
 }

@@ -41,11 +41,13 @@
             label6 = new Label();
             comboTestType = new ComboBox();
             label3 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtTestDescription
             // 
-            txtTestDescription.Location = new Point(244, 244);
+            txtTestDescription.Location = new Point(675, 99);
             txtTestDescription.Multiline = true;
             txtTestDescription.Name = "txtTestDescription";
             txtTestDescription.Size = new Size(227, 78);
@@ -54,7 +56,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(375, 556);
+            btnApply.Location = new Point(609, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 67;
@@ -64,7 +66,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(262, 556);
+            btnCancel.Location = new Point(496, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 66;
@@ -74,7 +76,7 @@
             // 
             // calendarTestDate
             // 
-            calendarTestDate.Location = new Point(244, 370);
+            calendarTestDate.Location = new Point(675, 232);
             calendarTestDate.MaxSelectionCount = 1;
             calendarTestDate.Name = "calendarTestDate";
             calendarTestDate.TabIndex = 65;
@@ -84,15 +86,15 @@
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label2.Location = new Point(184, 7);
             label2.Name = "label2";
-            label2.Size = new Size(346, 37);
+            label2.Size = new Size(833, 37);
             label2.TabIndex = 64;
-            label2.Text = "Zaplanuj test:";
+            label2.Text = "Zaplanuj test";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(244, 342);
+            label7.Location = new Point(675, 204);
             label7.Name = "label7";
             label7.Size = new Size(227, 25);
             label7.TabIndex = 63;
@@ -102,7 +104,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.Location = new Point(244, 215);
+            label1.Location = new Point(675, 70);
             label1.Name = "label1";
             label1.Size = new Size(227, 25);
             label1.TabIndex = 62;
@@ -113,7 +115,7 @@
             // 
             comboChooseClass.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseClass.FormattingEnabled = true;
-            comboChooseClass.Location = new Point(244, 95);
+            comboChooseClass.Location = new Point(291, 154);
             comboChooseClass.Name = "comboChooseClass";
             comboChooseClass.Size = new Size(227, 23);
             comboChooseClass.TabIndex = 61;
@@ -122,7 +124,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(244, 67);
+            label4.Location = new Point(291, 126);
             label4.Name = "label4";
             label4.Size = new Size(227, 25);
             label4.TabIndex = 60;
@@ -152,7 +154,7 @@
             comboTestType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboTestType.FormattingEnabled = true;
             comboTestType.Items.AddRange(new object[] { "Kartkówka", "Sprawdzian", "Odpowiedź ustna" });
-            comboTestType.Location = new Point(244, 167);
+            comboTestType.Location = new Point(291, 261);
             comboTestType.Name = "comboTestType";
             comboTestType.Size = new Size(227, 23);
             comboTestType.TabIndex = 70;
@@ -160,18 +162,29 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(244, 139);
+            label3.Location = new Point(291, 233);
             label3.Name = "label3";
             label3.Size = new Size(227, 25);
             label3.TabIndex = 69;
             label3.Text = "Rodzaj testu:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(30, 167);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 71;
+            pictureBox1.TabStop = false;
+            // 
             // AddNewTest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(540, 616);
+            ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(comboTestType);
             Controls.Add(label3);
             Controls.Add(txtTestDescription);
@@ -193,6 +206,7 @@
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
             Load += AddNewTest_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -212,5 +226,6 @@
         private Label label6;
         private ComboBox comboTestType;
         private Label label3;
+        private PictureBox pictureBox1;
     }
 }

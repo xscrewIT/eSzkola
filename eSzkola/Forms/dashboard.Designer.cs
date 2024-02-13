@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -43,6 +44,24 @@
             btnIncommingEvents = new Button();
             lblCurrentDate = new Label();
             btnCreateTest = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox10 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -54,6 +73,7 @@
             label1.Size = new Size(155, 96);
             label1.TabIndex = 0;
             label1.Text = "Elektroniczny\r\nSystem\r\nOceniania";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -104,9 +124,10 @@
             // 
             // btnCreateLesson
             // 
-            btnCreateLesson.Location = new Point(207, 92);
+            btnCreateLesson.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnCreateLesson.Location = new Point(247, 94);
             btnCreateLesson.Name = "btnCreateLesson";
-            btnCreateLesson.Size = new Size(112, 23);
+            btnCreateLesson.Size = new Size(160, 61);
             btnCreateLesson.TabIndex = 6;
             btnCreateLesson.Text = "Stwórz lekcję";
             btnCreateLesson.UseVisualStyleBackColor = true;
@@ -114,19 +135,21 @@
             // 
             // btnCheckPresence
             // 
-            btnCheckPresence.Location = new Point(342, 92);
+            btnCheckPresence.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnCheckPresence.Location = new Point(557, 94);
             btnCheckPresence.Name = "btnCheckPresence";
-            btnCheckPresence.Size = new Size(136, 23);
+            btnCheckPresence.Size = new Size(160, 61);
             btnCheckPresence.TabIndex = 7;
-            btnCheckPresence.Text = "Sprawdź frekwencję";
+            btnCheckPresence.Text = "Frekwencja";
             btnCheckPresence.UseVisualStyleBackColor = true;
             btnCheckPresence.Click += btnCheckPresence_Click;
             // 
             // btnCheckGrades
             // 
-            btnCheckGrades.Location = new Point(494, 92);
+            btnCheckGrades.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnCheckGrades.Location = new Point(857, 94);
             btnCheckGrades.Name = "btnCheckGrades";
-            btnCheckGrades.Size = new Size(112, 23);
+            btnCheckGrades.Size = new Size(160, 61);
             btnCheckGrades.TabIndex = 8;
             btnCheckGrades.Text = "Oceny";
             btnCheckGrades.UseVisualStyleBackColor = true;
@@ -134,9 +157,10 @@
             // 
             // btnSentMessage
             // 
-            btnSentMessage.Location = new Point(207, 216);
+            btnSentMessage.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnSentMessage.Location = new Point(557, 326);
             btnSentMessage.Name = "btnSentMessage";
-            btnSentMessage.Size = new Size(112, 23);
+            btnSentMessage.Size = new Size(160, 61);
             btnSentMessage.TabIndex = 11;
             btnSentMessage.Text = "Wyślij wiadomość";
             btnSentMessage.UseVisualStyleBackColor = true;
@@ -144,9 +168,10 @@
             // 
             // btnCreateHomeWork
             // 
-            btnCreateHomeWork.Location = new Point(207, 156);
+            btnCreateHomeWork.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnCreateHomeWork.Location = new Point(247, 212);
             btnCreateHomeWork.Name = "btnCreateHomeWork";
-            btnCreateHomeWork.Size = new Size(160, 23);
+            btnCreateHomeWork.Size = new Size(160, 61);
             btnCreateHomeWork.TabIndex = 10;
             btnCreateHomeWork.Text = "Dodaj zadanie domowe";
             btnCreateHomeWork.UseVisualStyleBackColor = true;
@@ -154,9 +179,10 @@
             // 
             // btnInsertNote
             // 
-            btnInsertNote.Location = new Point(628, 92);
+            btnInsertNote.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnInsertNote.Location = new Point(247, 326);
             btnInsertNote.Name = "btnInsertNote";
-            btnInsertNote.Size = new Size(112, 23);
+            btnInsertNote.Size = new Size(160, 61);
             btnInsertNote.TabIndex = 9;
             btnInsertNote.Text = "Wstaw uwagę";
             btnInsertNote.UseVisualStyleBackColor = true;
@@ -164,9 +190,10 @@
             // 
             // btnIncommingEvents
             // 
-            btnIncommingEvents.Location = new Point(558, 156);
+            btnIncommingEvents.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnIncommingEvents.Location = new Point(857, 326);
             btnIncommingEvents.Name = "btnIncommingEvents";
-            btnIncommingEvents.Size = new Size(182, 23);
+            btnIncommingEvents.Size = new Size(160, 61);
             btnIncommingEvents.TabIndex = 13;
             btnIncommingEvents.Text = "Zbliżające się wydarzenia";
             btnIncommingEvents.UseVisualStyleBackColor = true;
@@ -176,7 +203,7 @@
             // 
             lblCurrentDate.AutoSize = true;
             lblCurrentDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            lblCurrentDate.Location = new Point(700, 420);
+            lblCurrentDate.Location = new Point(929, 420);
             lblCurrentDate.Name = "lblCurrentDate";
             lblCurrentDate.Size = new Size(88, 21);
             lblCurrentDate.TabIndex = 15;
@@ -184,19 +211,119 @@
             // 
             // btnCreateTest
             // 
-            btnCreateTest.Location = new Point(405, 156);
+            btnCreateTest.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            btnCreateTest.Location = new Point(557, 212);
             btnCreateTest.Name = "btnCreateTest";
-            btnCreateTest.Size = new Size(110, 23);
+            btnCreateTest.Size = new Size(160, 61);
             btnCreateTest.TabIndex = 16;
             btnCreateTest.Text = "Zaplanuj test";
             btnCreateTest.UseVisualStyleBackColor = true;
             btnCreateTest.Click += btnCreateTest_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(40, 216);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(177, 90);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(70, 70);
+            pictureBox2.TabIndex = 18;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(177, 207);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(70, 70);
+            pictureBox3.TabIndex = 19;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(177, 323);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(70, 70);
+            pictureBox4.TabIndex = 20;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(487, 323);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(70, 70);
+            pictureBox5.TabIndex = 23;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(487, 207);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(70, 70);
+            pictureBox6.TabIndex = 22;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox7.Location = new Point(487, 90);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(70, 70);
+            pictureBox7.TabIndex = 21;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
+            pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox8.Location = new Point(787, 323);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(70, 70);
+            pictureBox8.TabIndex = 26;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.BackgroundImage = (Image)resources.GetObject("pictureBox10.BackgroundImage");
+            pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox10.Location = new Point(787, 90);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(70, 70);
+            pictureBox10.TabIndex = 24;
+            pictureBox10.TabStop = false;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox8);
+            Controls.Add(pictureBox10);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox6);
+            Controls.Add(pictureBox7);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(btnCreateTest);
             Controls.Add(lblCurrentDate);
             Controls.Add(btnIncommingEvents);
@@ -220,6 +347,15 @@
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
             Load += Dashboard_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,5 +377,14 @@
         private Button btnIncommingEvents;
         private Label lblCurrentDate;
         private Button btnCreateTest;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox10;
     }
 }

@@ -51,7 +51,7 @@ namespace eSzkola
 
                         string strSchoolSubject = comboSchoolSubjects.Text;
                         string strSchoolLessonSubject = txtSubject.Text;
-                        string strSchoolLessonDate = calendarCreateLesson.SelectionRange.Start.ToString("yyyy-MM-dd " + DateTime.Now.ToString("HH:mm:ss"));
+                        string strSchoolLessonDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                         string strClassID = comboClass.SelectedValue.ToString();
 

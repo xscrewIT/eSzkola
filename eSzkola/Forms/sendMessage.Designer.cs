@@ -40,6 +40,8 @@
             btnCancel = new Button();
             comboRecipientType = new ComboBox();
             label4 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -62,19 +64,19 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.Location = new Point(371, 15);
+            label1.Location = new Point(182, 15);
             label1.Name = "label1";
-            label1.Size = new Size(235, 37);
+            label1.Size = new Size(835, 37);
             label1.TabIndex = 34;
-            label1.Text = "Wyślij wiadomość:";
+            label1.Text = "Wyślij wiadomość";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label2.Location = new Point(182, 100);
+            label2.Location = new Point(191, 103);
             label2.Name = "label2";
             label2.Size = new Size(94, 25);
             label2.TabIndex = 35;
@@ -84,7 +86,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(194, 136);
+            label3.Location = new Point(203, 139);
             label3.Name = "label3";
             label3.Size = new Size(66, 25);
             label3.TabIndex = 36;
@@ -94,33 +96,33 @@
             // 
             comboRecipient.DropDownStyle = ComboBoxStyle.DropDownList;
             comboRecipient.FormattingEnabled = true;
-            comboRecipient.Location = new Point(282, 102);
+            comboRecipient.Location = new Point(291, 105);
             comboRecipient.Name = "comboRecipient";
-            comboRecipient.Size = new Size(506, 23);
+            comboRecipient.Size = new Size(726, 23);
             comboRecipient.TabIndex = 37;
             comboRecipient.DropDown += comboRecipient_DropDown;
             // 
             // txtMsgSubject
             // 
-            txtMsgSubject.Location = new Point(282, 138);
+            txtMsgSubject.Location = new Point(291, 141);
             txtMsgSubject.Name = "txtMsgSubject";
-            txtMsgSubject.Size = new Size(506, 23);
+            txtMsgSubject.Size = new Size(726, 23);
             txtMsgSubject.TabIndex = 38;
             txtMsgSubject.KeyPress += txtMsgSubject_KeyPress;
             // 
             // txtMessage
             // 
-            txtMessage.Location = new Point(182, 170);
+            txtMessage.Location = new Point(191, 173);
             txtMessage.Multiline = true;
             txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(606, 236);
+            txtMessage.Size = new Size(826, 236);
             txtMessage.TabIndex = 39;
             txtMessage.Text = "Wpisz treść...";
             txtMessage.KeyPress += txtMessage_KeyPress;
             // 
             // btnSend
             // 
-            btnSend.Location = new Point(495, 415);
+            btnSend.Location = new Point(614, 415);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(75, 23);
             btnSend.TabIndex = 69;
@@ -130,7 +132,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(382, 415);
+            btnCancel.Location = new Point(501, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 68;
@@ -143,26 +145,37 @@
             comboRecipientType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboRecipientType.FormattingEnabled = true;
             comboRecipientType.Items.AddRange(new object[] { "Uczeń", "Rodzic" });
-            comboRecipientType.Location = new Point(282, 67);
+            comboRecipientType.Location = new Point(291, 70);
             comboRecipientType.Name = "comboRecipientType";
-            comboRecipientType.Size = new Size(506, 23);
+            comboRecipientType.Size = new Size(726, 23);
             comboRecipientType.TabIndex = 71;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(182, 65);
+            label4.Location = new Point(191, 68);
             label4.Name = "label4";
             label4.Size = new Size(87, 25);
             label4.TabIndex = 70;
             label4.Text = "Do kogo:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(36, 148);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 72;
+            pictureBox1.TabStop = false;
+            // 
             // SendMessage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(comboRecipientType);
             Controls.Add(label4);
             Controls.Add(btnSend);
@@ -182,6 +195,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,5 +214,6 @@
         private Button btnCancel;
         private ComboBox comboRecipientType;
         private Label label4;
+        private PictureBox pictureBox1;
     }
 }

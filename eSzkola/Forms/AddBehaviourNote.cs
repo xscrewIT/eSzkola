@@ -46,7 +46,7 @@ namespace eSzkola
 
                         string strSchoolClass = comboChooseClass.Text;
                         string strStudentID = comboChooseStudent.SelectedValue.ToString();
-                        string strNoteDate = calendarAddNoteDate.SelectionRange.Start.ToString("yyyy-MM-dd " + DateTime.Now.ToString("HH:mm:ss"));
+                        string strNoteDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         string strNote = txtBehaviourNote.Text;
 
                         string insertQuery = ($"INSERT INTO Uwagi (uwaga, data, id_nauczyciel, id_uczen) VALUES" +

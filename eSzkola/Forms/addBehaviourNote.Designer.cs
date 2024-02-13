@@ -30,17 +30,17 @@
         {
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
             comboChooseStudent = new ComboBox();
             label1 = new Label();
             comboChooseClass = new ComboBox();
             label4 = new Label();
             label2 = new Label();
-            calendarAddNoteDate = new MonthCalendar();
             label3 = new Label();
             txtBehaviourNote = new TextBox();
             btnApply = new Button();
             btnCancel = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -61,21 +61,11 @@
             label6.TabIndex = 30;
             label6.Text = "Elektroniczny\r\nSystem\r\nOceniania";
             // 
-            // label7
-            // 
-            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label7.Location = new Point(188, 198);
-            label7.Name = "label7";
-            label7.Size = new Size(227, 25);
-            label7.TabIndex = 36;
-            label7.Text = "Data wpisu:";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // comboChooseStudent
             // 
             comboChooseStudent.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseStudent.FormattingEnabled = true;
-            comboChooseStudent.Location = new Point(188, 161);
+            comboChooseStudent.Location = new Point(266, 238);
             comboChooseStudent.Name = "comboChooseStudent";
             comboChooseStudent.Size = new Size(227, 23);
             comboChooseStudent.TabIndex = 35;
@@ -84,7 +74,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.Location = new Point(188, 133);
+            label1.Location = new Point(266, 210);
             label1.Name = "label1";
             label1.Size = new Size(227, 25);
             label1.TabIndex = 34;
@@ -95,7 +85,7 @@
             // 
             comboChooseClass.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseClass.FormattingEnabled = true;
-            comboChooseClass.Location = new Point(188, 90);
+            comboChooseClass.Location = new Point(266, 95);
             comboChooseClass.Name = "comboChooseClass";
             comboChooseClass.Size = new Size(227, 23);
             comboChooseClass.TabIndex = 33;
@@ -104,7 +94,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(188, 62);
+            label4.Location = new Point(266, 67);
             label4.Name = "label4";
             label4.Size = new Size(227, 25);
             label4.TabIndex = 32;
@@ -116,23 +106,16 @@
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label2.Location = new Point(184, 9);
             label2.Name = "label2";
-            label2.Size = new Size(606, 37);
+            label2.Size = new Size(833, 37);
             label2.TabIndex = 38;
-            label2.Text = "Wstaw uwagę:";
+            label2.Text = "Wstaw uwagę";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // calendarAddNoteDate
-            // 
-            calendarAddNoteDate.Location = new Point(188, 230);
-            calendarAddNoteDate.MaxSelectionCount = 1;
-            calendarAddNoteDate.Name = "calendarAddNoteDate";
-            calendarAddNoteDate.TabIndex = 39;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.Location = new Point(453, 62);
+            label3.Location = new Point(525, 59);
             label3.Name = "label3";
             label3.Size = new Size(114, 25);
             label3.TabIndex = 40;
@@ -141,16 +124,16 @@
             // 
             // txtBehaviourNote
             // 
-            txtBehaviourNote.Location = new Point(453, 90);
+            txtBehaviourNote.Location = new Point(525, 87);
             txtBehaviourNote.Multiline = true;
             txtBehaviourNote.Name = "txtBehaviourNote";
-            txtBehaviourNote.Size = new Size(335, 302);
+            txtBehaviourNote.Size = new Size(431, 302);
             txtBehaviourNote.TabIndex = 41;
             txtBehaviourNote.KeyPress += txtBehaviourNote_KeyPress;
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(498, 415);
+            btnApply.Location = new Point(606, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 43;
@@ -160,7 +143,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(385, 415);
+            btnCancel.Location = new Point(493, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 42;
@@ -168,18 +151,27 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(31, 161);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
+            // 
             // AddBehaviourNote
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(btnApply);
             Controls.Add(btnCancel);
             Controls.Add(txtBehaviourNote);
             Controls.Add(label3);
-            Controls.Add(calendarAddNoteDate);
             Controls.Add(label2);
-            Controls.Add(label7);
             Controls.Add(comboChooseStudent);
             Controls.Add(label1);
             Controls.Add(comboChooseClass);
@@ -193,6 +185,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,16 +194,15 @@
 
         private Label label5;
         private Label label6;
-        private Label label7;
         private ComboBox comboChooseStudent;
         private Label label1;
         private ComboBox comboChooseClass;
         private Label label4;
         private Label label2;
-        private MonthCalendar calendarAddNoteDate;
         private Label label3;
         private TextBox txtBehaviourNote;
         private Button btnApply;
         private Button btnCancel;
+        private PictureBox pictureBox1;
     }
 }

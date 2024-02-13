@@ -37,8 +37,10 @@
             dataGridIncomingTest = new DataGridView();
             label1 = new Label();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridIncomingHomework).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridIncomingTest).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -48,7 +50,7 @@
             label7.Name = "label7";
             label7.Size = new Size(838, 37);
             label7.TabIndex = 38;
-            label7.Text = "Nadchodzące wydarzenia:";
+            label7.Text = "Zbliżające się wydarzenia";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -81,7 +83,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(621, 404);
+            btnApply.Location = new Point(621, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 40;
@@ -91,7 +93,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(508, 404);
+            btnCancel.Location = new Point(508, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 39;
@@ -116,7 +118,7 @@
             label1.Name = "label1";
             label1.Size = new Size(416, 19);
             label1.TabIndex = 42;
-            label1.Text = "Zadania domowe:";
+            label1.Text = "Zadania domowe";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -126,14 +128,25 @@
             label2.Name = "label2";
             label2.Size = new Size(416, 19);
             label2.TabIndex = 43;
-            label2.Text = "Egzaminy:";
+            label2.Text = "Testy";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(36, 145);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
             // 
             // IncomingEvents
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridIncomingTest);
@@ -153,6 +166,7 @@
             Load += IncomingEvents_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridIncomingHomework).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridIncomingTest).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,5 +182,6 @@
         private DataGridView dataGridIncomingTest;
         private Label label1;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }

@@ -37,6 +37,8 @@
             btnCancel = new Button();
             label5 = new Label();
             calendarLessons = new MonthCalendar();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -62,15 +64,15 @@
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label3.Location = new Point(182, 14);
             label3.Name = "label3";
-            label3.Size = new Size(310, 37);
+            label3.Size = new Size(835, 37);
             label3.TabIndex = 7;
-            label3.Text = "Obecność:";
+            label3.Text = "Frekwencja";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(182, 284);
+            label4.Location = new Point(442, 282);
             label4.Name = "label4";
             label4.Size = new Size(310, 30);
             label4.TabIndex = 8;
@@ -81,7 +83,7 @@
             // 
             comboChooseLesson.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseLesson.FormattingEnabled = true;
-            comboChooseLesson.Location = new Point(225, 330);
+            comboChooseLesson.Location = new Point(485, 328);
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(215, 23);
             comboChooseLesson.TabIndex = 9;
@@ -89,7 +91,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(349, 417);
+            btnApply.Location = new Point(609, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 18;
@@ -99,7 +101,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(236, 417);
+            btnCancel.Location = new Point(496, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 17;
@@ -110,7 +112,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(182, 70);
+            label5.Location = new Point(442, 68);
             label5.Name = "label5";
             label5.Size = new Size(310, 30);
             label5.TabIndex = 19;
@@ -119,16 +121,27 @@
             // 
             // calendarLessons
             // 
-            calendarLessons.Location = new Point(221, 109);
+            calendarLessons.Location = new Point(481, 107);
             calendarLessons.MaxSelectionCount = 1;
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(31, 143);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
             // 
             // CheckPresence
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(504, 475);
+            ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(calendarLessons);
             Controls.Add(label5);
             Controls.Add(btnApply);
@@ -145,6 +158,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +174,6 @@
         private Button btnCancel;
         private Label label5;
         private MonthCalendar calendarLessons;
+        private PictureBox pictureBox1;
     }
 }

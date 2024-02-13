@@ -43,7 +43,9 @@
             btnCancel = new Button();
             label7 = new Label();
             label8 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridPresence).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridPresence
@@ -177,7 +179,7 @@
             label7.Name = "label7";
             label7.Size = new Size(835, 37);
             label7.TabIndex = 21;
-            label7.Text = "Modyfikuj obecność:";
+            label7.Text = "Sprawdź frekwencję";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -190,11 +192,22 @@
             label8.TabIndex = 22;
             label8.Text = "+ - obecność\r\nx - nieobecność\r\n* - nieobecność usprawiedliwiona\r\ns - spoźnienie";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(35, 149);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
+            // 
             // ChangePresence
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(btnApply);
@@ -219,6 +232,7 @@
             FormClosing += btnX_Click;
             Load += ChangePresence_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridPresence).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +254,6 @@
         private Button btnCancel;
         private Label label7;
         private Label label8;
+        private PictureBox pictureBox1;
     }
 }

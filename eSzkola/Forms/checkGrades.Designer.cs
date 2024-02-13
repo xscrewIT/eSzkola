@@ -37,11 +37,13 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // calendarLessons
             // 
-            calendarLessons.Location = new Point(218, 100);
+            calendarLessons.Location = new Point(490, 107);
             calendarLessons.MaxSelectionCount = 1;
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 29;
@@ -49,7 +51,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(184, 61);
+            label5.Location = new Point(456, 68);
             label5.Name = "label5";
             label5.Size = new Size(294, 30);
             label5.TabIndex = 28;
@@ -58,7 +60,7 @@
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(337, 408);
+            btnApply.Location = new Point(615, 415);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 27;
@@ -68,7 +70,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(224, 408);
+            btnCancel.Location = new Point(502, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 26;
@@ -80,7 +82,7 @@
             // 
             comboChooseLesson.DropDownStyle = ComboBoxStyle.DropDownList;
             comboChooseLesson.FormattingEnabled = true;
-            comboChooseLesson.Location = new Point(222, 321);
+            comboChooseLesson.Location = new Point(494, 328);
             comboChooseLesson.Name = "comboChooseLesson";
             comboChooseLesson.Size = new Size(215, 23);
             comboChooseLesson.TabIndex = 25;
@@ -89,7 +91,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.Location = new Point(184, 275);
+            label4.Location = new Point(456, 282);
             label4.Name = "label4";
             label4.Size = new Size(294, 30);
             label4.TabIndex = 24;
@@ -101,9 +103,9 @@
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label3.Location = new Point(184, 5);
             label3.Name = "label3";
-            label3.Size = new Size(294, 37);
+            label3.Size = new Size(833, 37);
             label3.TabIndex = 23;
-            label3.Text = "Oceny:";
+            label3.Text = "Oceny";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -124,11 +126,22 @@
             label1.TabIndex = 21;
             label1.Text = "Elektroniczny\r\nSystem\r\nOceniania";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.notebook_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(34, 141);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
+            // 
             // CheckGrades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(488, 450);
+            ClientSize = new Size(1029, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(calendarLessons);
             Controls.Add(label5);
             Controls.Add(btnApply);
@@ -145,6 +158,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +174,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private PictureBox pictureBox1;
     }
 }
