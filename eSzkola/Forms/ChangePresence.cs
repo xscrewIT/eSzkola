@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 namespace eSzkola
 {
@@ -42,13 +43,28 @@ namespace eSzkola
             {
                 try
                 {
-                    for (int row = 0; row < dataGridPresence.Rows.Count - 1; row++)
-                    {
-                        string presenceOption = dataGridPresence.Rows[row].Cells[3].Value.ToString();
-                        string presenceNotes = dataGridPresence.Rows[row].Cells[4].Value.ToString();
-                        string presenceID = dataGridPresence.Rows[row].Cells[0].Value.ToString();
+                    List<string> listPresenceID = new List<string>();
+                    int presenceRow = 0;
 
-                        if (ds.Tables["Obecnosc"].Rows[row][4].ToString() == "")
+                    string presenceIDQuery = ($"SELECT O.id_obecnosc FROM Obecnosc O INNER JOIN Uczen U ON U.id_uczen = O.id_uczen WHERE id_lekcji = {id_Lekcja}");
+                    using (SqlCommand command = new SqlCommand(presenceIDQuery, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listPresenceID.Add(reader.GetValue(0).ToString());
+                            }
+                        }
+                    }
+
+                    for (int row = 0; row < dataGridPresence.Rows.Count; row++)
+                    {
+                        string presenceOption = dataGridPresence.Rows[row].Cells[2].Value.ToString();
+                        string presenceNotes = dataGridPresence.Rows[row].Cells[3].Value.ToString();
+                        string presenceID = listPresenceID.ElementAt(presenceRow).ToString();
+
+                        if (ds.Tables["Obecnosc"].Rows[row][3].ToString() == "")
                         {
                             string updateQuery = ($"UPDATE Obecnosc SET obecnosc = '{presenceOption}', uwagi = NULL WHERE id_obecnosc = {presenceID}");
                             connection_Class.ExecuteQuery(conn, updateQuery);
@@ -58,6 +74,7 @@ namespace eSzkola
                             string updateQuery = ($"UPDATE Obecnosc SET obecnosc = '{presenceOption}', uwagi = '{presenceNotes}' WHERE id_obecnosc = {presenceID}");
                             connection_Class.ExecuteQuery(conn, updateQuery);
                         }
+                        presenceRow++;
                     }
                     MessageBox.Show("Zmiany zostały zapisane");
                     this.Hide();
@@ -71,11 +88,14 @@ namespace eSzkola
 
         private void ChangePresence_Load(object sender, EventArgs e)
         {
+            dataGridPresence.AllowUserToDeleteRows = false;
+            dataGridPresence.AllowUserToAddRows = false;
+
             using (SqlConnection conn = connection_Class.OpenConnection())
             {
                 try
                 {
-                    string query = ($"SELECT O.id_obecnosc, U.imie, U.nazwisko, O.obecnosc, O.uwagi  FROM Obecnosc O INNER JOIN Uczen U ON U.id_uczen = O.id_uczen WHERE id_lekcji = {id_Lekcja}");
+                    string query = ($"SELECT U.imie, U.nazwisko, O.obecnosc, O.uwagi FROM Obecnosc O INNER JOIN Uczen U ON U.id_uczen = O.id_uczen WHERE id_lekcji = {id_Lekcja}");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
 
                     da.Fill(ds, "Obecnosc");
@@ -103,10 +123,12 @@ namespace eSzkola
             {
                 if (e.RowIndex >= 0)
                 {
-                    txtFirstName.Text = dataGridPresence.SelectedRows[0].Cells[1].Value.ToString();
-                    txtLastName.Text = dataGridPresence.SelectedRows[0].Cells[2].Value.ToString();
-                    comboPresence.SelectedItem = dataGridPresence.SelectedRows[0].Cells[3].Value.ToString();
-                    txtAddNote.Text = dataGridPresence.SelectedRows[0].Cells[4].Value.ToString();
+                    BeginInvoke(new Action(() => UpdateTextBoxEnabled()));
+
+                    txtFirstName.Text = dataGridPresence.SelectedRows[0].Cells[0].Value.ToString();
+                    txtLastName.Text = dataGridPresence.SelectedRows[0].Cells[1].Value.ToString();
+                    comboPresence.SelectedItem = dataGridPresence.SelectedRows[0].Cells[2].Value.ToString();
+                    txtAddNote.Text = dataGridPresence.SelectedRows[0].Cells[3].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -117,14 +139,16 @@ namespace eSzkola
 
         private void comboPresence_DropDownClosed(object sender, EventArgs e)
         {
+            BeginInvoke(new Action(() => UpdateTextBoxEnabled()));
+
             int i = dataGridPresence.CurrentCell.RowIndex;
-            ds.Tables["Obecnosc"].Rows[i][3] = comboPresence.Text;
+            ds.Tables["Obecnosc"].Rows[i][2] = comboPresence.Text;
         }
 
         private void txtAddNote_Leave(object sender, EventArgs e)
         {
             int i = dataGridPresence.CurrentCell.RowIndex;
-            ds.Tables["Obecnosc"].Rows[i][4] = txtAddNote.Text;
+            ds.Tables["Obecnosc"].Rows[i][3] = txtAddNote.Text;
         }
 
         private void txtAddNote_KeyPress(object sender, KeyPressEventArgs e)
@@ -133,6 +157,24 @@ namespace eSzkola
             if (regex.IsMatch(e.KeyChar.ToString()))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void dataGridPresence_SelectionChanged(object sender, EventArgs e)
+        {
+            UpdateTextBoxEnabled();
+        }
+
+        private void UpdateTextBoxEnabled()
+        {
+            if (comboPresence.Text != "?")
+            {
+                txtAddNote.Enabled = true;
+            }
+            else
+            {
+                txtAddNote.Text = "";
+                txtAddNote.Enabled = false;
             }
         }
     }

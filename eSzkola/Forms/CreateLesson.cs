@@ -36,7 +36,9 @@ namespace eSzkola
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            if (comboSchoolSubjects.Text != "" && comboClass.Text != "" && txtSubject.Text != "" && !(txtSubject.Text.StartsWith(" ")))
+            DayOfWeek dayOfWeek = DateTime.Today.DayOfWeek;
+
+            if (comboSchoolSubjects.Text != "" && comboClass.Text != "" && txtSubject.Text != "" && !(txtSubject.Text.StartsWith(" ")) && dayOfWeek != DayOfWeek.Sunday && dayOfWeek != DayOfWeek.Saturday)
             {
                 using (SqlConnection conn = connection_Class.OpenConnection())
                 {
@@ -89,6 +91,14 @@ namespace eSzkola
             {
                 MessageBox.Show("Temat nie może zaczynać się od spacji! ");
                 txtSubject.Text = "Wpisz temat...";
+            }
+            else if (dayOfWeek == DayOfWeek.Saturday)
+            {
+                MessageBox.Show("Nie możesz utworzyć lekcji w sobotę! ");
+            }
+            else if (dayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("Nie możesz utworzyć lekcji w niedzielę! ");
             }
         }
 
@@ -145,6 +155,11 @@ namespace eSzkola
             {
                 e.Handled = true;
             }
+        }
+
+        private void CreateLesson_Load(object sender, EventArgs e)
+        {
+            lblCurrentDate.Text = DateTime.Today.DayOfWeek.ToString() + DateTime.Now.ToString(" dd-MM-yyyy");
         }
     }
 }

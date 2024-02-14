@@ -34,7 +34,9 @@ namespace eSzkola
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            if (comboChooseClass.Text != "" && comboTestType.Text != "" && txtTestDescription.Text != "" && !(txtTestDescription.Text.StartsWith(" ")))
+            DayOfWeek dayOfWeek = calendarTestDate.SelectionRange.Start.DayOfWeek;
+
+            if (comboChooseClass.Text != "" && comboTestType.Text != "" && txtTestDescription.Text != "" && !(txtTestDescription.Text.StartsWith(" ")) && dayOfWeek != DayOfWeek.Sunday && dayOfWeek != DayOfWeek.Saturday)
             {
                 using (SqlConnection conn = connection_Class.OpenConnection())
                 {
@@ -74,11 +76,19 @@ namespace eSzkola
                 MessageBox.Show("Zakres materiału nie może zaczynać się od spacji! ");
                 txtTestDescription.Text = "Podaj zakres...";
             }
+            else if (dayOfWeek == DayOfWeek.Saturday)
+            {
+                MessageBox.Show("Nie możesz utworzyć testu w sobotę! ");
+            }
+            else if (dayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("Nie możesz utworzyć testu w niedzielę! ");
+            }
         }
 
         private void AddNewTest_Load(object sender, EventArgs e)
         {
-            calendarTestDate.MinDate = DateTime.Now;
+            calendarTestDate.MinDate = DateTime.Now.AddDays(7);
         }
 
         private void comboChooseClass_DropDown(object sender, EventArgs e)

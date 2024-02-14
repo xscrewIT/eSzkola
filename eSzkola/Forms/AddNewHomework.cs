@@ -34,7 +34,9 @@ namespace eSzkola
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            if (comboChooseLesson.Text != "" && txtHomeworkDescription.Text != "" && !(txtHomeworkDescription.Text.StartsWith(" ")))
+            DayOfWeek dayOfWeek = calendarHomeworkDeadline.SelectionRange.Start.DayOfWeek;
+
+            if (comboChooseLesson.Text != "" && txtHomeworkDescription.Text != "" && !(txtHomeworkDescription.Text.StartsWith(" ")) && dayOfWeek != DayOfWeek.Sunday && dayOfWeek != DayOfWeek.Saturday)
             {
                 using (SqlConnection conn = connection_Class.OpenConnection())
                 {
@@ -69,6 +71,14 @@ namespace eSzkola
             {
                 MessageBox.Show("Opis wymagań nie może zaczynać się od spacji! ");
                 txtHomeworkDescription.Text = "Wpisz poprawny opis...";
+            }
+            else if (dayOfWeek == DayOfWeek.Saturday)
+            {
+                MessageBox.Show("Nie możesz ustawić terminu zadania w sobotę! ");
+            }
+            else if (dayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("Nie możesz ustawić terminu zadania w niedzielę! ");
             }
         }
 
@@ -109,7 +119,7 @@ namespace eSzkola
 
         private void AddNewHomework_Load(object sender, EventArgs e)
         {
-            calendarHomeworkDeadline.MinDate = DateTime.Now;
+            calendarHomeworkDeadline.MinDate = DateTime.Now.AddDays(1);
         }
 
         private void txtHomeworkDescription_KeyPress(object sender, KeyPressEventArgs e)

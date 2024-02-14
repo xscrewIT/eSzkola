@@ -126,6 +126,7 @@
             calendarLessons.MaxSelectionCount = 1;
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 20;
+            calendarLessons.DateChanged += calendarLessons_DateChanged;
             // 
             // pictureBox1
             // 

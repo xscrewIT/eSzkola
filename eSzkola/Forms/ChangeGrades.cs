@@ -40,12 +40,27 @@ namespace eSzkola
             {
                 try
                 {
-                    for (int row = 0; row < dataGridGrades.Rows.Count - 1; row++)
-                    {
-                        string gradeMark = dataGridGrades.Rows[row].Cells[3].Value.ToString();
-                        string gradeID = dataGridGrades.Rows[row].Cells[0].Value.ToString();
+                    List<string> listGradesID = new List<string>();
+                    int gradeRow = 0;
 
-                        if (ds.Tables["Ocena"].Rows[row][3].ToString() == "")
+                    string presenceIDQuery = ($"SELECT O.id_ocena FROM Ocena O INNER JOIN Uczen U ON U.id_uczen = O.id_uczen WHERE id_lekcja = {id_Lekcja}");
+                    using (SqlCommand command = new SqlCommand(presenceIDQuery, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listGradesID.Add(reader.GetValue(0).ToString());
+                            }
+                        }
+                    }
+
+                    for (int row = 0; row < dataGridGrades.Rows.Count; row++)
+                    {
+                        string gradeMark = dataGridGrades.Rows[row].Cells[2].Value.ToString();
+                        string gradeID = listGradesID.ElementAt(gradeRow).ToString();
+
+                        if (ds.Tables["Ocena"].Rows[row][2].ToString() == "")
                         {
                             string updateQuery = ($"UPDATE Ocena SET ocena = NULL WHERE id_ocena = {gradeID}");
                             connection_Class.ExecuteQuery(conn, updateQuery);
@@ -55,6 +70,7 @@ namespace eSzkola
                             string updateQuery = ($"UPDATE Ocena SET ocena = {gradeMark} WHERE id_ocena = {gradeID}");
                             connection_Class.ExecuteQuery(conn, updateQuery);
                         }
+                        gradeRow++;
                     }
                     MessageBox.Show("Zmiany zostały zapisane");
                     this.Hide();
@@ -72,9 +88,11 @@ namespace eSzkola
             {
                 if (e.RowIndex >= 0)
                 {
-                    txtFirstName.Text = dataGridGrades.SelectedRows[0].Cells[1].Value.ToString();
-                    txtLastName.Text = dataGridGrades.SelectedRows[0].Cells[2].Value.ToString();
-                    comboGrade.SelectedItem = dataGridGrades.SelectedRows[0].Cells[3].Value.ToString();
+                    comboGrade.SelectedItem = null;
+
+                    txtFirstName.Text = dataGridGrades.SelectedRows[0].Cells[0].Value.ToString();
+                    txtLastName.Text = dataGridGrades.SelectedRows[0].Cells[1].Value.ToString();
+                    comboGrade.SelectedItem = dataGridGrades.SelectedRows[0].Cells[2].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -85,11 +103,14 @@ namespace eSzkola
 
         private void ChangeGrades_Load(object sender, EventArgs e)
         {
+            dataGridGrades.AllowUserToDeleteRows = false;
+            dataGridGrades.AllowUserToAddRows = false;
+
             using (SqlConnection conn = connection_Class.OpenConnection())
             {
                 try
                 {
-                    string query = ($"SELECT O.id_ocena, U.imie, U.nazwisko, O.ocena FROM Ocena O INNER JOIN Uczen U ON U.id_uczen = O.id_uczen WHERE id_lekcja = {id_Lekcja}");
+                    string query = ($"SELECT U.imie, U.nazwisko, O.ocena FROM Ocena O INNER JOIN Uczen U ON U.id_uczen = O.id_uczen WHERE id_lekcja = {id_Lekcja}");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
 
                     da.Fill(ds, "Ocena");
@@ -113,8 +134,15 @@ namespace eSzkola
 
         private void comboGrade_DropDownClosed(object sender, EventArgs e)
         {
-            int i = dataGridGrades.CurrentCell.RowIndex;
-            ds.Tables["Ocena"].Rows[i][3] = comboGrade.Text;
+            try
+            {
+                int i = dataGridGrades.CurrentCell.RowIndex;
+                ds.Tables["Ocena"].Rows[i][2] = comboGrade.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wybierz poprawną ocenę!");
+            }
         }
     }
 }

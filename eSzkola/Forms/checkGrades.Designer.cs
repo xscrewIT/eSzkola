@@ -48,6 +48,7 @@
             calendarLessons.MaxSelectionCount = 1;
             calendarLessons.Name = "calendarLessons";
             calendarLessons.TabIndex = 29;
+            calendarLessons.DateChanged += calendarLessons_DateChanged;
             // 
             // label5
             // 

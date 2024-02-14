@@ -88,7 +88,7 @@
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 40;
-            btnApply.Text = "Zatwierdź";
+            btnApply.Text = "Zamknij";
             btnApply.UseVisualStyleBackColor = true;
             btnApply.Click += btnApply_Click;
             // 

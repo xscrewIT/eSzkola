@@ -119,7 +119,7 @@
             label4.Name = "label4";
             label4.Size = new Size(227, 25);
             label4.TabIndex = 46;
-            label4.Text = "Wybierz lekcję:";
+            label4.Text = "Wybierz dzisiejszą lekcję:";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -145,6 +145,7 @@
             txtHomeworkDescription.Location = new Point(311, 230);
             txtHomeworkDescription.Multiline = true;
             txtHomeworkDescription.Name = "txtHomeworkDescription";
+            txtHomeworkDescription.ScrollBars = ScrollBars.Vertical;
             txtHomeworkDescription.Size = new Size(227, 114);
             txtHomeworkDescription.TabIndex = 57;
             txtHomeworkDescription.KeyPress += txtHomeworkDescription_KeyPress;

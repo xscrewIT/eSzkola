@@ -15,6 +15,10 @@ namespace eSzkola
     public partial class Dashboard : Form
     {
         private Connection_Class connection_Class;
+        public Dashboard()
+        {
+            this.Visible = true;
+        }
 
         public Dashboard(Connection_Class connection_Class)
         {

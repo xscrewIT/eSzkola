@@ -116,6 +116,7 @@
             txtMessage.Location = new Point(191, 173);
             txtMessage.Multiline = true;
             txtMessage.Name = "txtMessage";
+            txtMessage.ScrollBars = ScrollBars.Vertical;
             txtMessage.Size = new Size(826, 236);
             txtMessage.TabIndex = 39;
             txtMessage.Text = "Wpisz treść...";

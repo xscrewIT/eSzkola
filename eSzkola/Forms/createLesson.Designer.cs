@@ -41,6 +41,8 @@
             btnCancel = new Button();
             btnApply = new Button();
             pictureBox1 = new PictureBox();
+            lblCurrentDate = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -160,11 +162,33 @@
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
             // 
+            // lblCurrentDate
+            // 
+            lblCurrentDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            lblCurrentDate.Location = new Point(490, 366);
+            lblCurrentDate.Name = "lblCurrentDate";
+            lblCurrentDate.Size = new Size(197, 21);
+            lblCurrentDate.TabIndex = 19;
+            lblCurrentDate.Text = "05.09.2023";
+            lblCurrentDate.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label8.Location = new Point(534, 335);
+            label8.Name = "label8";
+            label8.Size = new Size(114, 21);
+            label8.TabIndex = 20;
+            label8.Text = "Dzisiejsza data:";
+            // 
             // CreateLesson
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 450);
+            Controls.Add(label8);
+            Controls.Add(lblCurrentDate);
             Controls.Add(pictureBox1);
             Controls.Add(btnApply);
             Controls.Add(btnCancel);
@@ -185,6 +209,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-Szkoła";
             FormClosing += btnX_Click;
+            Load += CreateLesson_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -204,5 +229,7 @@
         private Button btnCancel;
         private Button btnApply;
         private PictureBox pictureBox1;
+        private Label lblCurrentDate;
+        private Label label8;
     }
 }

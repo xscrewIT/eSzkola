@@ -37,11 +37,17 @@ namespace eSzkola
 
         private void IncomingEvents_Load(object sender, EventArgs e)
         {
+            dataGridIncomingHomework.AllowUserToDeleteRows = false;
+            dataGridIncomingHomework.AllowUserToAddRows = false;
+
+            dataGridIncomingTest.AllowUserToDeleteRows = false;
+            dataGridIncomingTest.AllowUserToAddRows = false;
+
             using (SqlConnection conn = connection_Class.OpenConnection())
             {
                 try
                 {
-                    string query = ($"SELECT id_zadanie, data_wykonania, opis_zadania FROM Zadanie_domowe WHERE data_wykonania >= CONVERT(varchar, CONVERT(date, getDate())) ORDER BY data_wykonania");
+                    string query = ($"SELECT data_wykonania, opis_zadania FROM Zadanie_domowe WHERE data_wykonania >= CONVERT(varchar, CONVERT(date, getDate())) ORDER BY data_wykonania");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Zadanie");
@@ -66,7 +72,7 @@ namespace eSzkola
             {
                 try
                 {
-                    string query = ($"SELECT id_test, data_egzaminu, rodzaj_testu, opis FROM Test WHERE data_egzaminu >= CONVERT(varchar, CONVERT(date, getDate())) ORDER BY data_egzaminu");
+                    string query = ($"SELECT data_egzaminu, rodzaj_testu, opis FROM Test WHERE data_egzaminu >= CONVERT(varchar, CONVERT(date, getDate())) ORDER BY data_egzaminu");
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Test");

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace eSzkola
 {
-    public class Connection_Class
+    public class Connection_Class : IConnection
     {
         private string connectionString, username, password;
         private SqlConnection connection;

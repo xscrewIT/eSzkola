@@ -60,6 +60,7 @@
             dataGridPresence.Size = new Size(626, 294);
             dataGridPresence.TabIndex = 0;
             dataGridPresence.CellClick += dataGridPresence_CellClick;
+            dataGridPresence.SelectionChanged += dataGridPresence_SelectionChanged;
             // 
             // label1
             // 
@@ -137,7 +138,7 @@
             // 
             comboPresence.DropDownStyle = ComboBoxStyle.DropDownList;
             comboPresence.FormattingEnabled = true;
-            comboPresence.Items.AddRange(new object[] { "+", "x", "*", "s" });
+            comboPresence.Items.AddRange(new object[] { "+", "x", "*", "s", "?" });
             comboPresence.Location = new Point(646, 361);
             comboPresence.Name = "comboPresence";
             comboPresence.Size = new Size(121, 23);

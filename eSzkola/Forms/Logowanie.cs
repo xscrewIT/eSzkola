@@ -27,6 +27,7 @@ namespace eSzkola
                 if (connection == null) 
                 {
                     MessageBox.Show("Niepoprawne dane logowania, spróbuj jeszcze raz!");
+                    txtUserPassword.Text = "";
                 }
                 else
                 {

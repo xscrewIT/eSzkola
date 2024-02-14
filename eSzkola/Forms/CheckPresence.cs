@@ -85,7 +85,7 @@ namespace eSzkola
             {
                 MessageBox.Show("Wybierz lekcję!");
             }
-            
+
         }
 
         private void comboChooseLesson_DropDown(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace eSzkola
                         comboChooseLesson.DisplayMember = "temat";
                         comboChooseLesson.ValueMember = "id_lekcja";
                     }
-                    else 
+                    else
                     {
                         MessageBox.Show("W tym dniu użytkownik nie prowadził żadnej lekcji");
                         comboChooseLesson.DataSource = null;
@@ -121,6 +121,12 @@ namespace eSzkola
                     MessageBox.Show($"Error: {ex}");
                 }
             }
+        }
+
+        private void calendarLessons_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            comboChooseLesson.DataSource = null;
+            comboChooseLesson.Items.Clear();
         }
     }
 }

@@ -128,6 +128,7 @@
             txtBehaviourNote.Location = new Point(525, 87);
             txtBehaviourNote.Multiline = true;
             txtBehaviourNote.Name = "txtBehaviourNote";
+            txtBehaviourNote.ScrollBars = ScrollBars.Vertical;
             txtBehaviourNote.Size = new Size(431, 302);
             txtBehaviourNote.TabIndex = 41;
             txtBehaviourNote.KeyPress += txtBehaviourNote_KeyPress;

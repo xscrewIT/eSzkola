@@ -124,5 +124,11 @@ namespace eSzkola
                 }
             }
         }
+
+        private void calendarLessons_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            comboChooseLesson.DataSource = null;
+            comboChooseLesson.Items.Clear();
+        }
     }
 }
