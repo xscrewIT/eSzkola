@@ -104,24 +104,31 @@ namespace eSzkola
 
         private void comboChooseStudent_DropDown(object sender, EventArgs e)
         {
-            using (SqlConnection conn = connection_Class.OpenConnection())
+            if (comboChooseClass.Text != "")
             {
-                try
+                using (SqlConnection conn = connection_Class.OpenConnection())
                 {
-                    string id_Klasa = comboChooseClass.SelectedValue.ToString();
-                    string query = ($"SELECT id_uczen, imie, nazwisko FROM Uczen WHERE id_klasa = {id_Klasa}");
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "Uczen");
-                    ds.Tables[0].Columns.Add("FullName", typeof(string), "imie + ' ' + nazwisko");
-                    comboChooseStudent.DataSource = ds.Tables["Uczen"];
-                    comboChooseStudent.DisplayMember = "FullName";
-                    comboChooseStudent.ValueMember = "id_uczen";
+                    try
+                    {
+                        string id_Klasa = comboChooseClass.SelectedValue.ToString();
+                        string query = ($"SELECT id_uczen, imie, nazwisko FROM Uczen WHERE id_klasa = {id_Klasa}");
+                        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "Uczen");
+                        ds.Tables[0].Columns.Add("FullName", typeof(string), "imie + ' ' + nazwisko");
+                        comboChooseStudent.DataSource = ds.Tables["Uczen"];
+                        comboChooseStudent.DisplayMember = "FullName";
+                        comboChooseStudent.ValueMember = "id_uczen";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex}");
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex}");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Wybierz najpierw klasę!");
             }
         }
 
